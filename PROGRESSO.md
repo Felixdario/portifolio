@@ -101,6 +101,10 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - Só a página do Pontual foi desenhada; as outras três estão descritas em `docs/estrutura.md`.
 - O caso "R$ 100 em 3 parcelas" do Sobra precisa ser conferido nos testes do projeto antes de virar demonstração.
 
+### Revisão do dono (2026-11-18)
+- O dono gostou das pranchetas e pediu para incluir o trabalho e o TCC. Foi criada a prancheta **Trabalho e TCC (home)**, à direita da nota da Fase 2: Epays (biblioteca de componentes React e Epjota, gota âmbar) e SportLink, o TCC do IFPR (web, app e API em três gotas coral, com o botão "Ver o SportLink no ar"). O celular ganhou a mesma seção (altura agora 3700 px). No Sobre, o rótulo "Trabalho" virou "Trajetória".
+- Textos em `content/textos-site.md` (seção "Trabalho e TCC"); fatos do SportLink em `content/conteudo.md` (seção 4).
+
 ### A decidir pelo dono
 - Aprovar (ou pedir ajustes) nas 4 pranchetas da Fase 2.
 - Hospedagem: Vercel ou GitHub Pages.

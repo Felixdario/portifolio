@@ -128,6 +128,38 @@ As outras três páginas seguem a mesma ordem: cabeçalho, garantia com demonstr
 | `proximo` | Próximo: Pulo → | Next: Pulo → |
 | `capturas.alt` | Painel do estabelecimento com a agenda do dia · Cliente escolhendo um horário pelo celular · Recusa de horário indisponível com sugestões de outros horários | The business dashboard with the day's schedule · A customer picking a slot on their phone · An unavailable-slot refusal suggesting other times |
 
+## Trabalho e TCC (home, entre Projetos e Sobre)
+
+Fontes: `perfil-github/README.md` (Sobre mim, Outros projetos, Experiência) e `sportlink-api/README.md`.
+Cores novas: Epays âmbar `#fbe0a6` (a gota com peças pequenas que grudam, como componentes) e SportLink coral
+`#ffb38a` (três gotas, web, app e API, que formam uma só).
+
+| Chave | PT | EN |
+| - | - | - |
+| `tb.titulo` | Trabalho | Work |
+| `tb.intro` | Além dos projetos de portfólio: o que faço na empresa e o projeto com que terminei o técnico. | Beyond the portfolio projects: what I do at work and the project that closed my technical degree. |
+| `tb.epays.meta` | Hoje · Epays, Colombo (PR) | Now · Epays, Colombo, Brazil |
+| `tb.epays.gota` | Epays · desde ago/2025 | Epays · since Aug 2025 |
+| `tb.epays.cargo` | Full-stack júnior | Junior full-stack |
+| `tb.epays.lib.titulo` | Biblioteca de componentes | Component library |
+| `tb.epays.lib` | Mantenho uma biblioteca de componentes React com Vite, usada nos produtos internos da empresa. | I maintain a React component library built with Vite, used across the company's internal products. |
+| `tb.epays.epjota.titulo` | Epjota | Epjota |
+| `tb.epays.epjota` | Contribuo com o Epjota, que gerencia o fluxo de notas fiscais de serviço (NFS-e) e os relatórios fiscais entre empresas e prestadores. | I contribute to Epjota, which manages service invoices (NFS-e) and fiscal reports between companies and service providers. |
+| `tb.epays.stack` | React · TypeScript · Vite · Sass · C# · PostgreSQL · Docker · Redis | (igual) |
+| `tb.epays.ressalva` | Código da empresa: aqui não entram capturas nem números internos. | Company code: no screenshots or internal numbers here. |
+| `tb.tcc.meta` | TCC · Técnico em Informática, IFPR | Final project · IT technical degree, IFPR |
+| `tb.tcc.nome` | SportLink | SportLink |
+| `tb.tcc.frase` | Um sistema para quem pratica esporte: perfis de atletas, quadras e avaliações, competições, partidas, ranking, conquistas e conversas. | A system for people who play sports: athlete profiles, courts and reviews, competitions, matches, rankings, achievements and chat. |
+| `tb.tcc.partes` | Três partes que conversam pela mesma API: | Three parts that talk through the same API: |
+| `tb.tcc.web` | **Web** · Next.js, publicado na Vercel · repositório → | **Web** · Next.js, deployed on Vercel · repository → |
+| `tb.tcc.app` | **App** · React Native com Expo · repositório → | **App** · React Native with Expo · repository → |
+| `tb.tcc.api` | **API** · Python com FastAPI · repositório → | **API** · Python with FastAPI · repository → |
+| `tb.tcc.ao-vivo` | Ver o SportLink no ar → | See SportLink live → |
+
+Links: `https://sportlink-webapp.vercel.app`, `github.com/Felixdario/sportlink-webapp`, `sportlink-mobile`,
+`sportlink-api` (todos responderam 200 em `perfil-github/docs/links.txt`). O SportLink é o único item do site com
+demo no ar.
+
 ## Sobre
 
 | Chave | PT | EN |
@@ -143,7 +175,7 @@ As outras três páginas seguem a mesma ordem: cabeçalho, garantia com demonstr
 | `so.uso.testes` | Vitest, fast-check, Playwright, Testing Library, pytest | (igual) |
 | `so.uso.ia` | evals versionadas, defesa contra prompt injection, anonimização | versioned evals, prompt-injection defense, anonymization |
 | `so.uso.idiomas` | português nativo, inglês profissional pleno, espanhol profissional | Portuguese (native), English (full professional), Spanish (professional) |
-| `so.trabalho` | Trabalho | Work |
+| `so.trajetoria` | Trajetória | Career |
 | `so.formacao` | Formação | Education |
 
 Linha do tempo (o EN troca os meses por abreviações em inglês: aug 2025 – now etc.):

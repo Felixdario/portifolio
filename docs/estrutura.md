@@ -5,7 +5,7 @@ Data: 18/11/2026. Direção aprovada: C, "Lâmpada de lava" (`docs/direcoes.md` 
 ## Mapa do site
 
 ```
-/                     home PT: hero → projetos → sobre → contato → rodapé
+/                     home PT: hero → projetos → trabalho e TCC → sobre → contato → rodapé
 /projetos/sobra       página de projeto (idem pontual, pulo, confere)
 /en/                  home EN (mesma ordem)
 /en/projects/sobra    página de projeto em EN
@@ -21,6 +21,7 @@ Data: 18/11/2026. Direção aprovada: C, "Lâmpada de lava" (`docs/direcoes.md` 
 | - | - |
 | Projetos (home) · desktop | Os 4 projetos em linhas. Cada um tem a sua gota com o número que prova a garantia; hover ou foco faz a gota crescer e engolir as gotinhas, e as outras linhas ficam mais apagadas. |
 | Página de projeto: Pontual · desktop | Nome enorme com `mix-blend-mode: difference` sobre a gota rosa; garantia com a demonstração "Enviar os 20 pedidos" (20 gotas correm para terça 14:00, 1 se funde e 19 voltam cinzas); 3 camadas; 4 números; 3 capturas; "não medido"; próximo projeto. |
+| Trabalho e TCC (home) · desktop | Epays (biblioteca de componentes e Epjota) com uma gota âmbar cujas peças grudam no hover; SportLink, o TCC do IFPR, com três gotas coral (web, app e API) que formam uma só. Passar o mouse numa parte faz a gota dela crescer. Botão "Ver o SportLink no ar". |
 | Sobre, contato e rodapé · desktop | Texto curto, "o que uso", trabalho e formação; o e-mail é o maior texto da seção; o cursor é uma gota que gruda nas gotas paradas. |
 | Celular | Projetos, sobre e contato empilhados; tocar no projeto faz a gota dele engolir as gotinhas. |
 

@@ -263,6 +263,9 @@ Divergências entre as fontes [DECIDIDO: formação aparece só com anos; experi
 
 Outros projetos citados (fora dos quatro principais):
 - SportLink: TCC do técnico no IFPR, com web em Next.js na Vercel, app em React Native com Expo e API em Python com FastAPI. [fonte: perfil-github/README.md]
+  - O que faz: sistema esportivo com usuários, atletas, quadras, esportes, competições, atividades, conquistas, conversas, mensagens e avaliações de quadras. [fonte: sportlink-api/README.md]
+  - Links: https://sportlink-webapp.vercel.app, https://github.com/Felixdario/sportlink-webapp, https://github.com/Felixdario/sportlink-mobile, https://github.com/Felixdario/sportlink-api [fonte: perfil-github/README.md; perfil-github/docs/links.txt]
+  - [DECIDIDO 2026-11-18: o dono pediu que o trabalho na Epays e o TCC entrem no site, numa seção própria da home]
 - Oceanic.ui: site de design system em Next.js com Radix e Material UI, na Vercel. [fonte: perfil-github/README.md]
 - prospecta: ferramenta em Python (Starlette e SQLite) que busca empresas pela API do Google Places. [fonte: perfil-github/README.md]
 
