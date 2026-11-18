@@ -76,6 +76,9 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
   - o nome "Eduardo Felix" fica enorme (Bricolage Grotesque 800) e inverte de cor onde o líquido passa (`mix-blend-mode: difference`);
   - fundo noturno com grão, com alternância para o tema claro. Textos em Nunito.
 
+- **Aprovada:** em 2026-11-18 o dono aprovou a direção C, "Lâmpada de lava". A e B ficam no canvas só como histórico.
+
 ### Próximo passo
-1. **O dono aprova a direção C** (ou pede ajustes) no canvas do Claude Design.
+1. **Fase 2 (Estrutura e stack):** levar a Lâmpada de lava para o resto do site, desenhando antes no canvas do Claude Design: lista de projetos, página de um projeto, sobre, contato e rodapé. Escrever os textos em PT/EN a partir de `content/conteudo.md`.
+2. Decidir a stack (o `.gitignore` já prevê Next.js com export estático) e o fallback da animação: `prefers-reduced-motion`, gotas paradas e conteúdo legível sem script.
 2. **Fase 2 (Estrutura e stack):** com a direção escolhida, reimprimir a folha completa, escrever o argumento e o texto em PT/EN a partir de `content/conteudo.md` e montar o projeto. A stack ainda não foi decidida; o `.gitignore` já prevê Next.js com export estático (`out/`).
