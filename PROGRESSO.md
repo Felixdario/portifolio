@@ -110,8 +110,8 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - Corrigido: demonstração do Sobra (R$ 10,00 em 3 → 3,34 + 3,33 + 3,33, caso real de `allocate`), demonstração do Pulo (teste "crash entre o COMMIT e o XACK") e a linha "Papel" do Pontual.
 - **Checagem visual das pranchetas: pulada a pedido do dono** (o canvas exige login no navegador do app). Pode haver texto cortado, sobretudo no celular; a checagem fica para a página construída na Fase 3, com Playwright e o gate.
 
-### A decidir pelo dono
-- Hospedagem: Vercel ou GitHub Pages.
+### Hospedagem (decidida em 2026-11-18)
+- **Vercel**, servindo o export estático (`out/`).
 
 ### Próximo passo
 1. Revisão do dono no canvas: feita.

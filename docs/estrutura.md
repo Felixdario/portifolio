@@ -44,7 +44,7 @@ Cada página tem a sua "coisa viva", sempre ligada ao teste que prova a garantia
 - **Imagens** copiadas dos projetos para `public/img/`, convertidas para WebP em 1x e 2x por um script com `sharp`; `next/image` com `unoptimized` (o export não otimiza em tempo de execução).
 - **Lâmpada de lava** como um componente cliente: um `<svg>` com o filtro "gooey" (`feGaussianBlur` + `feColorMatrix`) e círculos movidos por `requestAnimationFrame`, limitado a ~30 fps.
 - **Testes:** Vitest para os dados e a i18n (mesmas chaves nos dois idiomas), Playwright com axe nas páginas exportadas (claro/escuro, 1440 e 390 px). Gate da `design-taste-frontend` (`inspect.mjs`, `lint.mjs`) na página final.
-- **Hospedagem: a decidir pelo dono** (Vercel ou GitHub Pages; os dois servem o `out/`).
+- **Hospedagem: Vercel** (decidida pelo dono em 2026-11-18), servindo o export estático.
 
 ## Fallback da animação
 
