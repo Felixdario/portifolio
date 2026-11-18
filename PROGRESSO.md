@@ -70,6 +70,11 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - O dono **rejeitou A e B** e pediu para seguir o padrão do Sharlee (https://itssharl.ee/): formas 3D orgânicas em tons pastel, fundo claro com grão, título largo em caixa-alta misturando contorno e preenchimento, subtítulo curto e dois links com seta.
 - Foi criada a **direção C, Formas orgânicas**, no mesmo canvas (primeira linha): Unbounded + Nunito, tubos pastel em SVG com reflexos, grão, parallax das formas com o mouse e alternância de tema claro/escuro. Formas, monograma e textos são próprios. A e B continuam no canvas só como histórico.
 - Isso contraria regras da `design-taste-frontend` (sem gradientes, centralizado), mas a preferência explícita do dono vale mais.
+- **Segunda revisão:** o dono achou a C uma cópia do Sharlee. Ele quer a mesma *sensação* (fluida, macia, viva com o mouse), não as mesmas formas nem o mesmo layout. A C foi refeita como **"Lâmpada de lava"**:
+  - cada projeto é uma gota de líquido colorido (Sobra lima, Pontual rosa, Pulo água, Confere lavanda) que flutua e se funde com as outras (filtro SVG "gooey");
+  - o cursor é uma gota que gruda nas outras, e passar o mouse num projeto faz a gota dele crescer e ir ao centro;
+  - o nome "Eduardo Felix" fica enorme (Bricolage Grotesque 800) e inverte de cor onde o líquido passa (`mix-blend-mode: difference`);
+  - fundo noturno com grão, com alternância para o tema claro. Textos em Nunito.
 
 ### Próximo passo
 1. **O dono aprova a direção C** (ou pede ajustes) no canvas do Claude Design.
