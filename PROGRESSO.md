@@ -111,7 +111,6 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - **Checagem visual das pranchetas: pulada a pedido do dono** (o canvas exige login no navegador do app). Pode haver texto cortado, sobretudo no celular; a checagem fica para a página construída na Fase 3, com Playwright e o gate.
 
 ### A decidir pelo dono
-- Aprovar (ou pedir ajustes) nas 4 pranchetas da Fase 2.
 - Hospedagem: Vercel ou GitHub Pages.
 
 ### Próximo passo
