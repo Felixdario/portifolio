@@ -105,10 +105,15 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - O dono gostou das pranchetas e pediu para incluir o trabalho e o TCC. Foi criada a prancheta **Trabalho e TCC (home)**, à direita da nota da Fase 2: Epays (biblioteca de componentes React e Epjota, gota âmbar) e SportLink, o TCC do IFPR (web, app e API em três gotas coral, com o botão "Ver o SportLink no ar"). O celular ganhou a mesma seção (altura agora 3700 px). No Sobre, o rótulo "Trabalho" virou "Trajetória".
 - Textos em `content/textos-site.md` (seção "Trabalho e TCC"); fatos do SportLink em `content/conteudo.md` (seção 4).
 
+### Revisão final da Fase 2 (2026-11-18)
+- Números e fatos conferidos nos READMEs e testes dos projetos; todos batem.
+- Corrigido: demonstração do Sobra (R$ 10,00 em 3 → 3,34 + 3,33 + 3,33, caso real de `allocate`), demonstração do Pulo (teste "crash entre o COMMIT e o XACK") e a linha "Papel" do Pontual.
+- **Checagem visual das pranchetas: pulada a pedido do dono** (o canvas exige login no navegador do app). Pode haver texto cortado, sobretudo no celular; a checagem fica para a página construída na Fase 3, com Playwright e o gate.
+
 ### A decidir pelo dono
 - Aprovar (ou pedir ajustes) nas 4 pranchetas da Fase 2.
 - Hospedagem: Vercel ou GitHub Pages.
 
 ### Próximo passo
-1. Revisão do dono no canvas.
+1. Revisão do dono no canvas: feita.
 2. **Fase 3 (Construção):** montar o projeto Next.js na raiz deste repositório, a home completa em PT/EN com a lâmpada de lava e o fallback, a página do Pontual e as outras três a partir do modelo. Rodar o gate (`inspect.mjs`, `lint.mjs`) e o Playwright com axe.
