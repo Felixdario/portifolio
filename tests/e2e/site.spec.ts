@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import sharp from 'sharp';
 
 const PAGINAS = [
   '/',
@@ -114,3 +115,49 @@ test('menu abre as âncoras da home e fecha com Esc', async ({ page }) => {
   await page.keyboard.press('Escape');
   await expect(folha).toBeHidden();
 });
+
+// O axe não compõe mix-blend-mode, então o nome e o e-mail são medidos pelos pixels da tela:
+// sem as gotas, o texto tem de se destacar do fundo nos dois temas.
+for (const tema of ['dark', 'light'] as const) {
+  for (const [url, seletor] of [
+    ['/', 'h1'],
+    ['/', 'a[href^="mailto:"]'],
+    ['/projetos/confere/', 'h1'],
+  ] as const) {
+    test(`${url} ${seletor} · ${tema}: o texto com difference é legível`, async ({ page }) => {
+      await page.addInitScript((t) => localStorage.setItem('tema', t), tema);
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.goto(url);
+      await page.addStyleTag({ content: 'svg{visibility:hidden!important} [data-entra]{opacity:1!important;transform:none!important}' });
+      const el = page.locator(seletor).first();
+      await el.scrollIntoViewIfNeeded();
+      const png = await el.screenshot();
+      const { data, info } = await sharp(png).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+      const lum = (i: number) => (0.2126 * data[i]! + 0.7152 * data[i + 1]! + 0.0722 * data[i + 2]!) / 255;
+      const fundo = lum(0);
+      let fortes = 0;
+      for (let i = 0; i < data.length; i += info.channels) if (Math.abs(lum(i) - fundo) > 0.5) fortes++;
+      expect(fortes / (info.width * info.height)).toBeGreaterThan(0.08);
+    });
+  }
+}
+
+for (const [tema, cor] of [
+  ['dark', 'rgb(246, 163, 199)'],
+  ['light', 'rgb(168, 35, 95)'],
+] as const) {
+  test(`hover dos links muda de cor · ${tema}`, async ({ page, isMobile }) => {
+    test.skip(isMobile, 'celular não tem hover');
+    await page.addInitScript((t) => localStorage.setItem('tema', t), tema);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    const link = page.getByRole('link', { name: '→ ver projetos' });
+    const antes = await link.evaluate((el) => getComputedStyle(el).color);
+    await link.hover();
+    await expect.poll(() => link.evaluate((el) => getComputedStyle(el).color)).toBe(cor);
+    expect(antes).not.toBe(cor);
+    const menu = page.getByRole('button', { name: 'Menu' });
+    await menu.hover();
+    await expect.poll(() => menu.evaluate((el) => getComputedStyle(el).color)).toBe(cor);
+  });
+}

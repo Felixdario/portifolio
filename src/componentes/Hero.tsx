@@ -32,7 +32,7 @@ const GOTINHAS: (Gota & { cor: string })[] = [
   { fx: 0.93, fy: 0.96, r: 40, ph: 2.2, cor: 'var(--pontual)' },
   { fx: 0.53, fy: 0.98, r: 28, ph: 3.7, cor: 'var(--pulo)' },
   { fx: 0.63, fy: 0.02, r: 30, ph: 5.0, cor: 'var(--confere)' },
-  { fx: 0.23, fy: 0.51, r: 24, ph: 1.1, cor: 'var(--epays)' },
+  { fx: 0.34, fy: 0.55, r: 24, ph: 1.1, cor: 'var(--epays)' },
 ];
 const CENTRO = { fx: 0.63, fy: 0.45 };
 
@@ -58,7 +58,7 @@ function cena(z: Zona, t: number, foco: number[]) {
     const r = p.r * (1 + 0.75 * f);
     return { x, y, r };
   });
-  const gotinhas = GOTINHAS.map((g) => posicao(g, z, t, 1.6));
+  const gotinhas = GOTINHAS.map((g) => posicao(g, z, t, 1.1));
   return { principais, gotinhas };
 }
 

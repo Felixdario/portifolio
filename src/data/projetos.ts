@@ -94,4 +94,10 @@ export const CURRICULO: { pt: string | null; en: string | null } = { pt: null, e
 /** Repositório deste site (link "Código no GitHub" do rodapé). Com null, o rodapé mostra o texto sem link. */
 export const REPO_DO_SITE: string | null = 'https://github.com/Felixdario/portifolio';
 
-export const SITE_URL = process.env.SITE_URL ?? 'http://localhost:3000';
+/**
+ * Domínio usado no canonical e no hreflang. Ordem: SITE_URL (definida à mão), o domínio de produção que a
+ * Vercel passa ao build (VERCEL_PROJECT_PRODUCTION_URL, sem protocolo) e, fora da Vercel, localhost.
+ */
+export const SITE_URL =
+  process.env.SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000');

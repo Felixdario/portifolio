@@ -739,3 +739,15 @@
 :global(.js) .pj[data-apagado][data-entrou] {
   opacity: 0.5;
 }
+
+/* O nome e o e-mail usam mix-blend-mode: difference. O grupo isolado precisa do próprio fundo;
+   sem ele o texto se mistura com o transparente e fica sempre cor de osso (some no tema claro). */
+.hero,
+.contato {
+  background: var(--bg);
+}
+
+.ctEmail:hover,
+.ctEmail:focus-visible {
+  color: var(--nome);
+}

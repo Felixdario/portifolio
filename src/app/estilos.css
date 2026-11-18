@@ -6,6 +6,7 @@
   --line: rgba(236, 233, 225, 0.16);
   --palco: rgba(236, 233, 225, 0.05);
   --cinza: #5d5a6b;
+  --destaque: #f6a3c7; /* hover e foco dos links: 9,5:1 sobre o fundo escuro */
   --grao: 0.09;
   --nome: #f0ede5; /* com mix-blend-mode: difference, fica claro no escuro e escuro no claro */
   --sobre-gota: #15141d;
@@ -29,6 +30,7 @@
   --line: rgba(29, 27, 38, 0.16);
   --palco: rgba(29, 27, 38, 0.05);
   --cinza: #b8b4c2;
+  --destaque: #a8235f; /* 5,8:1 sobre o fundo claro */
   --grao: 0.13;
   color-scheme: light;
 }
@@ -102,7 +104,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
+  color: var(--destaque);
   text-decoration: underline;
   text-underline-offset: 5px;
   text-decoration-thickness: 1.5px;
@@ -247,10 +251,29 @@ svg {
 a,
 button {
   transition:
+    color 200ms var(--ease),
     opacity 200ms var(--ease),
     transform 160ms var(--ease);
 }
 
 a:active {
   opacity: 0.7;
+}
+
+/* Hover dos botões de texto do topo (idioma, tema, menu). */
+button:not(.botao):hover,
+button:not(.botao):focus-visible {
+  color: var(--destaque);
+}
+
+/* Não mudam de cor: botões cheios (texto escuro sobre a cor) e o texto com difference. */
+a.botao:hover,
+a.botao:focus-visible {
+  color: var(--sobre-gota);
+}
+
+@media (hover: none) {
+  a:hover {
+    color: inherit;
+  }
 }

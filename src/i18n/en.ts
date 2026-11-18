@@ -205,8 +205,8 @@ export const en: Dicionario = {
     confere: {
       nome: 'Confere',
       kicker: '04 · AI résumé checker',
-      numero: '0',
-      numeroLegenda: 'score difference when name, gender or age change*',
+      numero: '78 = 78',
+      numeroLegenda: 'the same score when name, gender or age change*',
       frase:
         'Paste the job post, upload the résumé and see each requirement next to the passage that proves it, or the lack of one.',
       garantia: 'No quote, no credit. The score is computed in code, not by the AI.',

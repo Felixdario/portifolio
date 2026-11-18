@@ -207,8 +207,8 @@ export const pt: Dicionario = {
     confere: {
       nome: 'Confere',
       kicker: '04 · currículos com IA',
-      numero: '0',
-      numeroLegenda: 'de diferença na nota ao trocar nome, gênero ou idade*',
+      numero: '78 = 78',
+      numeroLegenda: 'a mesma nota ao trocar nome, gênero ou idade*',
       frase:
         'Cole a vaga, envie o currículo e veja cada requisito com o trecho que o comprova, ou a falta dele.',
       garantia: 'Sem trecho, não conta. A nota é calculada em código, não pela IA.',

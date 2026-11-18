@@ -426,3 +426,8 @@
     aspect-ratio: 16 / 10;
   }
 }
+
+/* Mesmo motivo do hero: fundo próprio para o difference do nome funcionar nos dois temas. */
+.cabeca {
+  background: var(--bg);
+}
