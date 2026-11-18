@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Direção A: Instrumento quieto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef0f3;--surface:#e2e5ea;--ink:#0b0c0e;--muted:#5d6470;--accent:#1f2de6;--accent-ink:#fff;
+  --step-small:clamp(.875rem,.85rem + .1vw,.9375rem);
+  --step-body:clamp(1.125rem,1.05rem + .3vw,1.3125rem);
+  --step-head:clamp(2.25rem,1.2rem + 3.4vw,4.25rem);
+  --col:22vw;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.5 "EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.bar{display:flex;justify-content:space-between;align-items:baseline;padding:40px 32px 0 var(--col);font-size:var(--step-small)}
+.bar .mark{font-style:italic;font-size:1.25rem;text-decoration:none}
+.bar nav{display:flex;gap:24px}
+.lang button{font:inherit;background:none;border:0;padding:4px 2px;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed=true]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.lang button:focus-visible,.btn:focus-visible,.run:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+main{padding:18vh 32px 96px var(--col)}
+h1{font-weight:500;font-size:var(--step-head);line-height:1.04;letter-spacing:-.015em;max-width:22ch}
+.lead{margin-top:32px;max-width:34em}
+.actions{margin-top:32px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.btn{background:var(--accent);color:var(--accent-ink);text-decoration:none;padding:14px 22px;border-radius:2px;transition:transform .12s}
+.btn:active{transform:scale(.97)}
+.demo{margin-top:72px;max-width:560px;background:var(--surface);padding:28px}
+.demo p{font-size:var(--step-small);color:var(--muted)}
+.demo p strong{color:var(--ink);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:20px 0}
+.grid span{aspect-ratio:1;background:var(--bg);transition:background .25s}
+.grid span.ok{background:var(--accent)}
+.grid span.no{background:#c9cdd4}
+.run{font:inherit;font-size:var(--step-small);background:var(--ink);color:var(--bg);border:0;padding:10px 16px;border-radius:2px;cursor:pointer}
+.out{margin-top:14px;min-height:1.5em}
+figure{margin-top:56px;max-width:560px}
+figure img{width:100%;height:auto;display:block}
+figcaption{font-size:var(--step-small);color:var(--muted);margin-top:8px}
+@media (max-width:760px){:root{--col:24px} .bar{padding:32px 24px 0} main{padding:14vh 24px 64px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="mark" href="#">Eduardo Felix</a>
+  <nav>
+    <a href="#" data-i18n="nav1">Projetos</a>
+    <a href="#" data-i18n="nav2">Sobre</a>
+    <span class="lang" role="group" aria-label="Idioma"><button aria-pressed="true" data-l="pt">PT</button> <button aria-pressed="false" data-l="en">EN</button></span>
+  </nav>
+</header>
+<main>
+  <h1 data-i18n="h1">Cada garantia, com o teste que a prova.</h1>
+  <p class="lead" data-i18n="lead">Sou desenvolvedor full-stack júnior em Curitiba e região: APIs em Node.js e TypeScript, interfaces em React e apps em React Native. Quatro projetos, cada decisão registrada.</p>
+  <div class="actions">
+    <a class="btn" href="#" data-i18n="cta">Ver os quatro projetos</a>
+    <a href="#" data-i18n="cv">Baixar currículo (PDF)</a>
+  </div>
+
+  <section class="demo" aria-labelledby="d1">
+    <p id="d1"><strong data-i18n="dt">Pontual: 20 pedidos para o mesmo horário.</strong> <span data-i18n="dd">O banco aceita um e recusa dezenove, em todas as 10 rodadas do teste.</span></p>
+    <div class="grid" aria-hidden="true"></div>
+    <button class="run" data-i18n="run">Enviar os 20 pedidos</button>
+    <p class="out" aria-live="polite"></p>
+  </section>
+
+  <figure>
+    <img src="img/pontual-409.png" alt="Tela do Pontual recusando um horário já ocupado e sugerindo os próximos livres" width="390" height="844" style="max-width:240px">
+    <figcaption data-i18n="cap">A recusa 409 no Pontual, com os próximos horários livres.</figcaption>
+  </figure>
+</main>
+<script>
+const T={en:{nav1:"Work",nav2:"About",h1:"Every guarantee, with the test that proves it.",lead:"I'm a junior full-stack developer near Curitiba, Brazil: APIs in Node.js and TypeScript, interfaces in React and apps in React Native. Four projects, every decision written down.",cta:"See the four projects",cv:"Download résumé (PDF)",dt:"Pontual: 20 requests for the same slot.",dd:"The database accepts one and refuses nineteen, in all 10 test rounds.",run:"Send the 20 requests",cap:"Pontual's 409 refusal, with the next free slots."}};
+const PT={};document.querySelectorAll('[data-i18n]').forEach(e=>PT[e.dataset.i18n]=e.innerHTML);T.pt=PT;
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{const l=b.dataset.l;document.documentElement.lang=l==='pt'?'pt-BR':'en';document.querySelectorAll('.lang button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.querySelectorAll('[data-i18n]').forEach(e=>e.innerHTML=T[l][e.dataset.i18n]);});
+const g=document.querySelector('.grid');for(let i=0;i<20;i++)g.append(document.createElement('span'));
+document.querySelector('.run').onclick=()=>{const s=[...g.children];s.forEach(x=>x.className='');const w=Math.floor(Math.random()*20);
+ s.forEach((x,i)=>setTimeout(()=>x.className=i===w?'ok':'no',40*i));
+ setTimeout(()=>document.querySelector('.out').textContent=document.documentElement.lang==='en'?'1 booked · 19 refused with 409':'1 reserva · 19 recusas com 409',820);};
+</script>
+</body>
+</html>

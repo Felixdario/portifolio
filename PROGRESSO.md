@@ -43,9 +43,28 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - Sobra: corrigir o link interno para "Limitações conhecidas".
 - `perfil-github/docs/links.txt`: trocar Agenda por Pontual.
 
-### Próximo passo
-1. **Fase 1 (Design):** carregar `design-taste-frontend` e `impeccable` (shape), propor 2 direções curtas (tipografia, paleta, ideia de movimento e uma tela de hero cada) e PARAR para o dono escolher. Prever PT/EN no layout (seletor de idioma, textos de tamanhos diferentes).
-
 ### Como verificar
 - `grep -n "PENDENTE" content/conteudo.md` deve achar só a linha da convenção (linha 9).
 - `grep -c 'Ã[^O]\|â€\|Â' content/conteudo.md` deve dar 0.
+
+## Fase 1 — Design: duas direções (concluída em 2026-11-18, aguardando a escolha do dono)
+
+### Feito
+- `docs/direcoes.md`: duas direções com tipografia, paleta, composição, "coisa viva", movimento e riscos.
+  - **A. Instrumento quieto:** EB Garamond, cinza frio + cobalto, coluna estreita; demonstração "20 pedidos → 1 reserva".
+  - **B. Palco dividido:** Work Sans, verde-preto + osso + jade, captura do projeto fixa à direita e índice que troca o palco.
+- `docs/direcoes/a-instrumento.html` e `b-palco.html`: hero de cada uma, com o seletor PT/EN funcionando, e capturas em 1440x900 e 390x844.
+- `.taste-skill/`: as folhas de direção sorteadas pelo `draw.mjs` (para reimprimir: `draw.mjs --show`).
+
+### Decisões
+- A ideia comum: cada projeto tem uma garantia e o teste que a prova. Veio dos números de `content/conteudo.md`.
+- A terceira direção sorteada (*dark-room*) ficou de fora porque depende de fotos, e o portfólio só tem capturas de tela.
+- `impeccable` não foi carregada (modo econômico).
+
+### Bloqueios e limites
+- O gate (`inspect.mjs`, `lint.mjs`) não rodou nos rascunhos. Fica para a página final.
+- No Chrome headless, `--window-size=390` renderiza com ~500px. Para a captura de celular, use um iframe de 390px.
+
+### Próximo passo
+1. **O dono escolhe A ou B** (ou pede ajustes) olhando `docs/direcoes.md`.
+2. **Fase 2 (Estrutura e stack):** com a direção escolhida, reimprimir a folha completa, escrever o argumento e o texto em PT/EN a partir de `content/conteudo.md` e montar o projeto. A stack ainda não foi decidida; o `.gitignore` já prevê Next.js com export estático (`out/`).
