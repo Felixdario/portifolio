@@ -31,8 +31,8 @@ Os textos estão em `content/textos-site.md` (PT e EN).
 
 Cada página tem a sua "coisa viva", sempre ligada ao teste que prova a garantia:
 
-- **Sobra:** dividir R$ 100,00 em 3 parcelas. Com float aparece 33,333…; em centavos inteiros fica 33,33 + 33,33 + 33,34, e a soma bate. As gotas lima se dividem em três. (Conferir antes se o Sobra tem um teste com esse caso; se não tiver, usar um caso que esteja nos testes.)
-- **Pulo:** o mesmo clique enviado 5 vezes (retentativa do worker) vira 1 no contador; um robô e uma prévia do WhatsApp caem numa gota separada.
+- **Sobra:** dividir R$ 10,00 em 3. Com float aparece 3,3333…; em centavos inteiros fica 3,34 + 3,33 + 3,33 (o centavo que sobra vai para a primeira parte) e a soma bate. As gotas lima se dividem em três. É o caso de `allocate(cents(1000), 3)` em `financas/packages/shared/src/money/arithmetic.test.ts`.
+- **Pulo:** o worker cai depois de gravar o clique e antes de confirmar a leitura (entre o COMMIT e o XACK); o evento volta pelo `XAUTOCLAIM` e o contador continua em 1. Um robô e uma prévia do WhatsApp caem numa gota separada. É o teste "crash entre o COMMIT e o XACK" em `encurtador/apps/worker/test/integration/pipeline.test.ts`.
 - **Confere:** o mesmo currículo com três nomes diferentes dá a mesma nota; um requisito sem trecho fica de fora, com "sem trecho, não conta".
 
 ## Stack (decidida)

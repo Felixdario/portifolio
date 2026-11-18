@@ -101,7 +101,7 @@ As outras três páginas seguem a mesma ordem: cabeçalho, garantia com demonstr
 | `voltar` | ← todos os projetos | ← all projects |
 | `meta` | 02 · agendamento online · 2026 | 02 · online booking · 2026 |
 | `resumo` | Agendamento online que não deixa marcar duas vezes o mesmo horário. O cliente reserva sozinho pelo celular, e a barbearia, o salão ou a clínica acompanha a agenda num painel. | Online booking that never lets the same slot be taken twice. Customers book on their own from their phone, and the barbershop, salon or clinic follows the schedule on a dashboard. |
-| `papel.rotulo` / `papel` | Papel / direção dos agentes de IA, regras, revisão e testes | Role / directing the AI agents, rules, review and tests |
+| `papel.rotulo` / `papel` | Papel / direção dos agentes de IA, decisões registradas e testes | Role / directing the AI agents, written decisions and tests |
 | `codigo.rotulo` | Código | Code |
 | `demo.rotulo` / `demo` | Demo / roda localmente, com conta demo e dados fictícios | Demo / runs locally, with a demo account and fictional data |
 | `licenca.rotulo` | Licença | License |
