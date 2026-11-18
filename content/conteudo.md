@@ -7,6 +7,7 @@ Convenções deste arquivo:
   consultado em 2026-11-18.
 - `[EM CONSTRUÇÃO]` = não existe ainda (demo, captura, link).
 - `[PENDENTE: ...]` = exige decisão ou confirmação do dono.
+- `[DECIDIDO: ...]` = decisão do dono em 2026-11-18 (resumo na seção 6).
 - Texto sem fonte é redação deste rascunho (títulos, frases de ligação), não fato.
 
 ---
@@ -18,13 +19,13 @@ Convenções deste arquivo:
 - **Localização:**
   - "Curitiba e região, Paraná" [fonte: perfil-github/README.md]
   - "Colombo, Paraná, Brasil" [fonte: linkedin.pdf]
-  - [PENDENTE: escolher qual localização mostrar no site]
+  - [DECIDIDO: o site mostra "Curitiba e região, Paraná"]
 - **Cargo atual:** Full-Stack Developer Junior na Epays, desde agosto de 2025 [fonte: linkedin.pdf; perfil-github/README.md]
 - **Título que já aparece nas fontes:**
   - "Desenvolvedor full-stack júnior em Curitiba e região" [fonte: perfil-github/README.md]
   - "Full-Stack Developer focused on React ecosystem · Building scalable interfaces and APIs that work in production" [fonte: linkedin.pdf]
 
-**Função em uma frase — opções para o dono escolher** [PENDENTE: escolher uma]:
+**Função em uma frase** [DECIDIDO: opção 1]:
 
 1. "Desenvolvedor full-stack júnior: APIs em Node.js e TypeScript, interfaces em React e apps em React Native." (adaptada de [fonte: perfil-github/README.md])
 2. "Desenvolvedor full-stack que prova as garantias de cada projeto com testes." (adaptada de "as garantias principais têm teste" [fonte: perfil-github/README.md])
@@ -37,7 +38,7 @@ Convenções deste arquivo:
 Os quatro projetos foram construídos com agentes de IA sob a direção do dono, com as decisões registradas
 por escrito (ADRs e registros de decisão) e testes que provam o resultado [fonte: perfil-github/README.md].
 Ordem declarada nos READMEs: Sobra 1 de 4, Pontual 2 de 4, Pulo 3 de 4 [fonte: financas/README.md; agenda/README.md; encurtador/README.md].
-Confere não diz a posição [PENDENTE: ordem dos projetos no site].
+Confere não diz a posição. [DECIDIDO: no site a ordem é Sobra, Pontual, Pulo, Confere.]
 
 Nenhum dos quatro tem demo publicada: todos rodam localmente com conta demo e dados sintéticos
 [fonte: financas/README.md; agenda/README.md; encurtador/README.md; curriculo/README.md].
@@ -205,7 +206,7 @@ Nenhum dos quatro tem demo publicada: todos rodam localmente com conta demo e da
 ### Mobile
 - React Native e Expo — Sobra [fonte: financas/README.md]; SportLink mobile [fonte: perfil-github/README.md]
 - React Native com fluxos offline e sincronização — Floox [fonte: linkedin.pdf]
-- Flutter (projetos pessoais) — citado no LinkedIn [fonte: linkedin.pdf] [PENDENTE: nenhum projeto Flutter aparece nas fontes; manter ou retirar?]
+- Flutter (projetos pessoais) — citado no LinkedIn [fonte: linkedin.pdf] [DECIDIDO: manter, como projetos pessoais, mesmo sem repositório nas fontes]
 
 ### IA aplicada
 - Evals versionadas, defesa contra prompt injection, anonimização, embeddings locais, saída estruturada da API da Anthropic — Confere [fonte: perfil-github/README.md; curriculo/README.md]
@@ -246,17 +247,17 @@ Nenhum dos quatro tem demo publicada: todos rodam localmente com conta demo e da
 
 | Período | O quê | Onde | Fonte |
 | - | - | - | - |
-| fev/2022 – dez/2025 | Técnico em Informática (Information Technology Project Management) | IFPR, Colombo | [fonte: linkedin.pdf] |
+| 2022 – 2025 | Técnico em Informática (Information Technology Project Management) | IFPR, Colombo | [fonte: linkedin.pdf] |
 | jan/2024 – out/2024 | Full-Stack Developer: C#, ASP.NET MVC, Razor, SQL Server, OCR, APIs REST, sistema de gestão de RH | BNE - Banco Nacional de Empregos, Curitiba | [fonte: linkedin.pdf] |
 | set/2024 – dez/2024 | Front-End Developer: base de um app React Native do zero (navegação, autenticação, layouts), OCR, offline-first | Floox, Curitiba | [fonte: linkedin.pdf] |
 | dez/2024 – fev/2025 | Front-End Developer: React com MUI, i18n em inglês, português e espanhol, integração com Node.js e API do BNE, suporte a clientes em inglês e espanhol | LUGARH, Curitiba e região | [fonte: linkedin.pdf] |
 | fev/2025 – mai/2025 | Front-End Developer: novos fluxos no app React Native, extração de documentos, fluxos offline e sincronização | Floox, Colombo | [fonte: linkedin.pdf] |
 | mai/2025 – ago/2025 | Front-End Developer: features e correções em apps React, integração com APIs REST | Epays, Colombo | [fonte: linkedin.pdf] |
 | ago/2025 – hoje | Full-Stack Developer Junior: biblioteca de componentes React com Vite usada em produtos internos; contribui com o Epjota (fluxo de NFS-e e relatórios fiscais) | Epays, Colombo | [fonte: linkedin.pdf; perfil-github/README.md] |
-| jan/2026 – jul/2028 (em andamento) | Análise e Desenvolvimento de Sistemas | PUCPR | [fonte: linkedin.pdf] |
+| 2026 – 2028 (em andamento) | Análise e Desenvolvimento de Sistemas | PUCPR | [fonte: linkedin.pdf] |
 | 2026 | Quatro projetos de portfólio: Sobra, Pontual, Pulo, Confere | GitHub | [fonte: git log dos quatro repositórios; api.github.com] |
 
-Divergências entre as fontes [PENDENTE: confirmar]:
+Divergências entre as fontes [DECIDIDO: formação aparece só com anos; experiência mantém mês/ano]:
 - IFPR: "2022–2025" no README do perfil, "fevereiro de 2022 - dezembro de 2025" no LinkedIn. [fonte: perfil-github/README.md; linkedin.pdf]
 - PUCPR: "2026–2028" no README do perfil, "janeiro de 2026 - julho de 2028" no LinkedIn. [fonte: perfil-github/README.md; linkedin.pdf]
 
@@ -265,7 +266,16 @@ Outros projetos citados (fora dos quatro principais):
 - Oceanic.ui: site de design system em Next.js com Radix e Material UI, na Vercel. [fonte: perfil-github/README.md]
 - prospecta: ferramenta em Python (Starlette e SQLite) que busca empresas pela API do Google Places. [fonte: perfil-github/README.md]
 
-### Rascunho de texto pessoal (baseado só nas fontes) [PENDENTE: revisar tom e conteúdo]
+### Rascunho de texto pessoal (baseado só nas fontes) [DECIDIDO: versão curta abaixo; o histórico fica na linha do tempo]
+
+Versão curta (a que vai para o site):
+
+> Sou Eduardo Felix, desenvolvedor full-stack júnior em Curitiba e região. Trabalho na Epays, com
+> uma biblioteca de componentes React usada em produtos internos e com o Epjota, fluxo de notas
+> fiscais de serviço. Nos meus projetos de portfólio, dirijo agentes de IA, registro as decisões
+> por escrito e escrevo testes que provam as garantias principais.
+
+Versão longa (referência, não vai para o site):
 
 > Sou Eduardo Felix, desenvolvedor full-stack júnior em Curitiba e região. Hoje trabalho na Epays,
 > onde mantenho uma biblioteca de componentes React com Vite usada em produtos internos e contribuo
@@ -280,7 +290,7 @@ Outros projetos citados (fora dos quatro principais):
 
 Fontes do rascunho: [fonte: perfil-github/README.md; linkedin.pdf; curriculo/README.md]
 
-Não usado no rascunho, mas presente no LinkedIn (números da empresa, não do dono): Epays processa mais de 4 milhões de pagamentos de salário via Pix por mês, cerca de R$ 2 bilhões em folha, para mais de 750 clientes corporativos. [fonte: linkedin.pdf] [PENDENTE: usar ou não no site]
+Não usado no rascunho, mas presente no LinkedIn (números da empresa, não do dono): Epays processa mais de 4 milhões de pagamentos de salário via Pix por mês, cerca de R$ 2 bilhões em folha, para mais de 750 clientes corporativos. [fonte: linkedin.pdf] [DECIDIDO: não usar no site]
 
 ---
 
@@ -289,27 +299,33 @@ Não usado no rascunho, mas presente no LinkedIn (números da empresa, não do d
 - **E-mail:** eduardojosedario@gmail.com [fonte: linkedin.pdf; perfil-github/README.md]
 - **GitHub:** https://github.com/Felixdario [fonte: linkedin.pdf; api.github.com]
 - **LinkedIn:** https://www.linkedin.com/in/felixdariodev/ [fonte: linkedin.pdf; perfil-github/README.md]
-- **Localização:** Curitiba e região, Paraná [fonte: perfil-github/README.md] (LinkedIn: Colombo, Paraná) [fonte: linkedin.pdf]
+- **Localização:** Curitiba e região, Paraná [fonte: perfil-github/README.md] [DECIDIDO]
 - Telefone: não consta nas fontes; não incluir.
-- Currículo em PDF para download: [EM CONSTRUÇÃO] [PENDENTE: oferecer o PDF do LinkedIn ou um currículo próprio?]
+- Currículo em PDF para download: [DECIDIDO: o PDF exportado do LinkedIn; hoje ele está no `.gitignore`, então na construção será preciso decidir como publicá-lo (ex.: copiar para a pasta pública do site)]
 
 ---
 
-## 6. Pendências
+## 6. Decisões do dono (2026-11-18) e pendências
 
-1. [PENDENTE: escolher a função em uma frase (seção 1).]
-2. [PENDENTE: localização exibida — "Curitiba e região" ou "Colombo, Paraná".]
-3. [PENDENTE: datas da formação — usar o formato do LinkedIn (mês/ano) ou só anos.]
-4. [PENDENTE: ordem dos projetos no site; Confere não declara posição.]
-5. Demos publicadas dos quatro projetos: [EM CONSTRUÇÃO]. [PENDENTE: publicar alguma, ou deixar só repositório + capturas?]
-6. Vídeos/GIFs dos projetos: [EM CONSTRUÇÃO]; nenhum encontrado nos repositórios.
-7. [PENDENTE: escolher 1 captura de capa por projeto. Sugestões a partir dos READMEs: Sobra `web/painel-outubro-claro-desktop.png`; Pontual `painel-detalhe.png`; Pulo `link-5m-1440-claro.png`; Confere `landing-exemplo.png`.]
-8. [PENDENTE: copiar as capturas para dentro de `portfolio/` ou apontar para `raw.githubusercontent.com` (como faz o README do perfil).]
-9. Licença: Pontual e Pulo dizem "a definir"; Confere não tem arquivo de licença; só Sobra é MIT. [fonte: agenda/README.md; encurtador/README.md; financas/README.md] [PENDENTE: decidir antes de divulgar]
+### Decidido
+1. Função: "Desenvolvedor full-stack júnior: APIs em Node.js e TypeScript, interfaces em React e apps em React Native."
+2. Localização: "Curitiba e região, Paraná".
+3. Formação só com anos (IFPR 2022–2025, PUCPR 2026–2028); experiência mantém mês/ano.
+4. Ordem dos projetos: Sobra, Pontual, Pulo, Confere.
+5. Sem demo ao vivo: cada projeto mostra repositório + capturas. O link de demo não aparece até existir.
+6. Vídeos/GIFs: não há; o site não depende deles.
+7. Capas: Sobra `web/painel-outubro-claro-desktop.png`; Pontual `painel-detalhe.png`; Pulo `link-5m-1440-claro.png`; Confere `landing-exemplo.png`.
+8. Capturas copiadas para dentro de `portfolio/` (e otimizadas na construção), não apontadas para `raw.githubusercontent.com`.
+9. Licença: MIT em todos. Pontual, Pulo e Confere precisam receber o arquivo MIT nos próprios repositórios antes da divulgação.
+12. Flutter: manter nas competências, como projetos pessoais.
+13. Números da Epays: não usar.
+14. Sem foto pessoal no site. Currículo para download = PDF do LinkedIn.
+15. Site em português e inglês desde o início.
+- "Sobre mim": versão curta (seção 4); o histórico fica na linha do tempo.
+
+### Ainda em aberto (fora deste repositório, antes de divulgar)
 10. Confere: README local ainda diz que o repositório "nunca foi enviado", mas ele foi publicado em 2026-11-18; o repositório local está 1 commit à frente do remoto e o primeiro CI precisa ser conferido. [fonte: curriculo/README.md; curriculo/PROGRESSO.md; git status de curriculo]
 11. Sobra: o README remete a uma seção "Limitações conhecidas" que não existe mais no arquivo (link quebrado interno). [fonte: financas/README.md]
-12. [PENDENTE: Flutter aparece no LinkedIn como projetos pessoais, sem repositório nas fontes; manter ou retirar das competências.]
-13. [PENDENTE: usar ou não os números da Epays (empresa) no "Sobre mim".]
-14. [PENDENTE: foto do dono para o site — nenhuma imagem pessoal nas fontes.] [EM CONSTRUÇÃO]
-15. [PENDENTE: versão em inglês do site? Os READMEs de Pontual, Pulo e Confere têm `README.en.md`; o perfil tem versão em inglês.]
 16. O `perfil-github/docs/links.txt` ainda lista `github.com/Felixdario/Agenda` (respondendo 200); o repositório público chama-se Pontual e o README do perfil já usa Pontual. No site, usar só `github.com/Felixdario/Pontual`. [fonte: perfil-github/docs/links.txt; perfil-github/README.md; api.github.com]
+- Adicionar licença MIT a Pontual, Pulo e Confere (item 9).
+- Tradução para o inglês do conteúdo (item 15): feita na construção, a partir deste arquivo.

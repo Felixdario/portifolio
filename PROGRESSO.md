@@ -19,10 +19,33 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - Sharlee: em headless, a captura mostra só o preloader. No navegador com GPU, o conteúdo só aparece depois de uma interação. Scroll, páginas internas e celular não foram vistos.
 - Nenhum projeto tem demo publicada. Todos os links de demo estão `[EM CONSTRUÇÃO]`.
 
+## Revisão do conteúdo pelo dono (concluída em 2026-11-18)
+
+### Feito
+- Todas as `[PENDENTE]` de `content/conteudo.md` foram respondidas pelo dono e marcadas como `[DECIDIDO: ...]`. O resumo fica na seção 6 do arquivo.
+- O "Sobre mim" ganhou uma versão curta (é a que vai para o site). A versão longa ficou como referência.
+
+### Decisões
+- Função: opção 1 ("APIs em Node.js e TypeScript, interfaces em React e apps em React Native").
+- Localização: Curitiba e região, PR.
+- Ordem dos projetos: Sobra, Pontual, Pulo, Confere.
+- Formação aparece só com anos.
+- Flutter continua nas competências.
+- Os números da Epays não entram.
+- Sem demos ao vivo: cada projeto mostra repositório e capturas, com as capas sugeridas copiadas para dentro de `portfolio/`.
+- Sem foto. O currículo é o PDF do LinkedIn, que hoje está no `.gitignore`; na construção, decidir como publicá-lo.
+- Site em PT e EN desde o início.
+- Licença MIT em todos os projetos.
+
+### Fora deste repositório (antes de divulgar)
+- Adicionar MIT a Pontual, Pulo e Confere.
+- Confere: atualizar o README ("nunca foi enviado"), enviar o commit pendente e conferir o CI.
+- Sobra: corrigir o link interno para "Limitações conhecidas".
+- `perfil-github/docs/links.txt`: trocar Agenda por Pontual.
+
 ### Próximo passo
-1. **Dono:** revisar `content/conteudo.md` e resolver as `[PENDENTE]`. As principais:
-   - frase de função;
-   - localização (Curitiba e região ou Colombo);
-   - tom do texto pessoal;
-   - Flutter e os números da Epays.
-2. **Fase 1 (Design):** carregar `design-taste-frontend` e `impeccable` (shape), propor 2 direções curtas (tipografia, paleta, ideia de movimento e uma tela de hero cada) e PARAR para o dono escolher.
+1. **Fase 1 (Design):** carregar `design-taste-frontend` e `impeccable` (shape), propor 2 direções curtas (tipografia, paleta, ideia de movimento e uma tela de hero cada) e PARAR para o dono escolher. Prever PT/EN no layout (seletor de idioma, textos de tamanhos diferentes).
+
+### Como verificar
+- `grep -n "PENDENTE" content/conteudo.md` deve achar só a linha da convenção (linha 9).
+- `grep -c 'Ã[^O]\|â€\|Â' content/conteudo.md` deve dar 0.
