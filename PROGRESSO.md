@@ -33,7 +33,7 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - Flutter continua nas competências.
 - Os números da Epays não entram.
 - Sem demos ao vivo: cada projeto mostra repositório e capturas, com as capas sugeridas copiadas para dentro de `portfolio/`.
-- Sem foto. O currículo é o PDF do LinkedIn, que hoje está no `.gitignore`; na construção, decidir como publicá-lo.
+- Sem foto. O currículo para download será um currículo próprio (PDF em PT e EN, sem foto), feito a partir de `content/conteudo.md`; o PDF do LinkedIn não é usado no site.
 - Site em PT e EN desde o início.
 - Licença MIT em todos os projetos.
 

@@ -301,7 +301,7 @@ Não usado no rascunho, mas presente no LinkedIn (números da empresa, não do d
 - **LinkedIn:** https://www.linkedin.com/in/felixdariodev/ [fonte: linkedin.pdf; perfil-github/README.md]
 - **Localização:** Curitiba e região, Paraná [fonte: perfil-github/README.md] [DECIDIDO]
 - Telefone: não consta nas fontes; não incluir.
-- Currículo em PDF para download: [DECIDIDO: o PDF exportado do LinkedIn; hoje ele está no `.gitignore`, então na construção será preciso decidir como publicá-lo (ex.: copiar para a pasta pública do site)]
+- Currículo em PDF para download: [DECIDIDO: currículo próprio, sem foto, gerado a partir deste arquivo (PT e EN); não usar o PDF do LinkedIn] [EM CONSTRUÇÃO]
 
 ---
 
@@ -319,7 +319,7 @@ Não usado no rascunho, mas presente no LinkedIn (números da empresa, não do d
 9. Licença: MIT em todos. Pontual, Pulo e Confere precisam receber o arquivo MIT nos próprios repositórios antes da divulgação.
 12. Flutter: manter nas competências, como projetos pessoais.
 13. Números da Epays: não usar.
-14. Sem foto pessoal no site. Currículo para download = PDF do LinkedIn.
+14. Sem foto pessoal no site. Currículo para download = currículo próprio (PDF em PT e EN, sem foto), feito a partir deste conteúdo.
 15. Site em português e inglês desde o início.
 - "Sobre mim": versão curta (seção 4); o histórico fica na linha do tempo.
 
