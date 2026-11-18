@@ -55,6 +55,7 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
   - **B. Palco dividido:** Work Sans, verde-preto + osso + jade, captura do projeto fixa à direita e índice que troca o palco.
 - `docs/direcoes/a-instrumento.html` e `b-palco.html`: hero de cada uma, com o seletor PT/EN funcionando, e capturas em 1440x900 e 390x844.
 - `.taste-skill/`: as folhas de direção sorteadas pelo `draw.mjs` (para reimprimir: `draw.mjs --show`).
+- **Prévia no Claude Design** (o dono prefere ver por aí, não pelo HTML): https://claude.ai/artifact/RMdAvcdDbUFF1qm6bAPZfq. Canvas privado com 4 pranchetas (A e B, desktop 1440x900 e celular 390x844) e uma nota por direção. A demonstração dos 20 pedidos e o índice que troca o palco funcionam no modo Play. As próximas prévias de design vão para lá.
 
 ### Decisões
 - A ideia comum: cada projeto tem uma garantia e o teste que a prova. Veio dos números de `content/conteudo.md`.
