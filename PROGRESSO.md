@@ -78,7 +78,33 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 
 - **Aprovada:** em 2026-11-18 o dono aprovou a direção C, "Lâmpada de lava". A e B ficam no canvas só como histórico.
 
+## Fase 2 — Estrutura e stack (concluída em 2026-11-18, aguardando a revisão do dono)
+
+### Feito
+- **Canvas** (mesmo link da Fase 1), nova linha no topo, "Fase 2 · Lâmpada de lava no resto do site", com 4 pranchetas interativas (modo Play):
+  - Projetos (home), desktop: cada projeto é uma linha com a sua gota e, dentro dela, o número da garantia (1087, 20→1, 6,42 ms, 0*). Hover/foco faz a gota crescer e engolir as gotinhas.
+  - Página de projeto do Pontual, desktop: demonstração "Enviar os 20 pedidos" com gotas (1 se funde no horário, 19 voltam cinzas), 3 camadas, 4 números, 3 capturas, "não medido" e próximo projeto.
+  - Sobre, contato e rodapé, desktop: o e-mail é o maior texto; o cursor vira gota.
+  - Celular (390 px) com projetos, sobre e contato empilhados.
+- As capturas foram enviadas ao canvas. As 3 do Pontual (`painel-detalhe`, `fluxo-horarios`, `painel-agenda`) foram copiadas para `docs/direcoes/img/pontual-*.png`.
+- `content/textos-site.md`: todos os textos do site em PT e EN, por chave.
+- `docs/estrutura.md`: mapa do site, demonstrações das outras 3 páginas de projeto, stack e fallback da animação.
+
+### Decisões
+- Stack: Next.js 16 com `output: 'export'`, TypeScript estrito, CSS Modules, textos em `src/i18n/pt.ts` e `en.ts` sem biblioteca de i18n, `next/font`, imagens WebP geradas com `sharp`, Vitest + Playwright com axe.
+- Rotas: `/` e `/projetos/<slug>` em PT; `/en/` e `/en/projects/<slug>` em EN.
+- Fallback: sem JS, as gotas ficam paradas e a demonstração mostra o resultado final; com movimento reduzido, nada flutua.
+- O asterisco do Confere ("medido nas regras, com casos fictícios") aparece junto do número, sempre.
+
+### Bloqueios e limites
+- As pranchetas não foram conferidas em captura (a regra do canvas é não renderizar sem o dono pedir). Pode haver texto cortado ou sobreposto, sobretudo no celular (altura estimada em 2800 px).
+- Só a página do Pontual foi desenhada; as outras três estão descritas em `docs/estrutura.md`.
+- O caso "R$ 100 em 3 parcelas" do Sobra precisa ser conferido nos testes do projeto antes de virar demonstração.
+
+### A decidir pelo dono
+- Aprovar (ou pedir ajustes) nas 4 pranchetas da Fase 2.
+- Hospedagem: Vercel ou GitHub Pages.
+
 ### Próximo passo
-1. **Fase 2 (Estrutura e stack):** levar a Lâmpada de lava para o resto do site, desenhando antes no canvas do Claude Design: lista de projetos, página de um projeto, sobre, contato e rodapé. Escrever os textos em PT/EN a partir de `content/conteudo.md`.
-2. Decidir a stack (o `.gitignore` já prevê Next.js com export estático) e o fallback da animação: `prefers-reduced-motion`, gotas paradas e conteúdo legível sem script.
-2. **Fase 2 (Estrutura e stack):** com a direção escolhida, reimprimir a folha completa, escrever o argumento e o texto em PT/EN a partir de `content/conteudo.md` e montar o projeto. A stack ainda não foi decidida; o `.gitignore` já prevê Next.js com export estático (`out/`).
+1. Revisão do dono no canvas.
+2. **Fase 3 (Construção):** montar o projeto Next.js na raiz deste repositório, a home completa em PT/EN com a lâmpada de lava e o fallback, a página do Pontual e as outras três a partir do modelo. Rodar o gate (`inspect.mjs`, `lint.mjs`) e o Playwright com axe.
