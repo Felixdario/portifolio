@@ -66,6 +66,11 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 - O gate (`inspect.mjs`, `lint.mjs`) não rodou nos rascunhos. Fica para a página final.
 - No Chrome headless, `--window-size=390` renderiza com ~500px. Para a captura de celular, use um iframe de 390px.
 
+### Revisão do dono (2026-11-18)
+- O dono **rejeitou A e B** e pediu para seguir o padrão do Sharlee (https://itssharl.ee/): formas 3D orgânicas em tons pastel, fundo claro com grão, título largo em caixa-alta misturando contorno e preenchimento, subtítulo curto e dois links com seta.
+- Foi criada a **direção C, Formas orgânicas**, no mesmo canvas (primeira linha): Unbounded + Nunito, tubos pastel em SVG com reflexos, grão, parallax das formas com o mouse e alternância de tema claro/escuro. Formas, monograma e textos são próprios. A e B continuam no canvas só como histórico.
+- Isso contraria regras da `design-taste-frontend` (sem gradientes, centralizado), mas a preferência explícita do dono vale mais.
+
 ### Próximo passo
-1. **O dono escolhe A ou B** (ou pede ajustes) olhando `docs/direcoes.md`.
+1. **O dono aprova a direção C** (ou pede ajustes) no canvas do Claude Design.
 2. **Fase 2 (Estrutura e stack):** com a direção escolhida, reimprimir a folha completa, escrever o argumento e o texto em PT/EN a partir de `content/conteudo.md` e montar o projeto. A stack ainda não foi decidida; o `.gitignore` já prevê Next.js com export estático (`out/`).
