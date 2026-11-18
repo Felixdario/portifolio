@@ -115,4 +115,59 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 
 ### Próximo passo
 1. Revisão do dono no canvas: feita.
-2. **Fase 3 (Construção):** montar o projeto Next.js na raiz deste repositório, a home completa em PT/EN com a lâmpada de lava e o fallback, a página do Pontual e as outras três a partir do modelo. Rodar o gate (`inspect.mjs`, `lint.mjs`) e o Playwright com axe.
+2. Fase 3: feita (abaixo).
+
+## Fase 3 — Construção (concluída em 2026-11-18, aguardando a revisão do dono)
+
+### Feito
+- Projeto Next.js 16.4 na raiz, com `output: 'export'` e `trailingSlash`: 12 páginas estáticas em `out/`
+  (`/`, `/en/`, `/projetos/<slug>/`, `/en/projects/<slug>/`). TypeScript 6 estrito, CSS Modules, sem Tailwind.
+- Textos em `src/i18n/pt.ts` e `en.ts`, com o mesmo tipo (`src/i18n/tipos.ts`). Dados fixos em `src/data/projetos.ts`.
+- Lâmpada de lava: um laço só (`src/lava/motor.ts`, ~30 fps), que pausa com a aba oculta e quando a cena sai da tela.
+  Cenas: hero (gotas dos projetos, cursor-gota, hover/foco na lista), linhas de projeto, Epays e SportLink, contato,
+  cabeçalho de cada página de projeto.
+- Quatro demonstrações, cada uma ligada a um teste real (detalhes em `content/textos-site.md`, seção "Fase 3"):
+  Sobra (R$ 10,00 em 3), Pontual (20 pedidos → 1 reserva), Pulo (worker cai entre COMMIT e XACK), Confere (4 versões → 78).
+  No celular, cada palco troca para um layout vertical.
+- Fallback: sem JS, o HTML traz as gotas paradas e cada demonstração no estado final; com movimento reduzido, nada
+  flutua e o botão pula para o resultado. As entradas das seções (`data-entra`) só escondem quando há JS.
+- Tema escuro por padrão, claro no botão, salvo em `localStorage` e aplicado antes da pintura.
+- Capturas: copiadas para `assets/capturas/<projeto>/` (PNG original) e convertidas por `npm run imagens`
+  (`scripts/imagens.mjs`, sharp) para `public/img/*.webp`. Quatro por página (Confere: capa + 3).
+- Testes: `npm test` (Vitest, 9 testes: mesmas chaves PT/EN, sem mojibake, alt por captura, asterisco do Confere,
+  imagens existentes, repositórios certos) e `npm run e2e` (Playwright com o Chrome instalado, 52 testes: axe em
+  10 páginas × claro/escuro × 1440/390 px, sem rolagem lateral, imagens carregadas, sem erros no console,
+  hreflang e seletor de idioma, demonstração, movimento reduzido, sem JS, tema salvo, menu). Tudo passando.
+- Servidor estático para conferir o export: `npm run serve` (http://localhost:4321) e `.claude/launch.json`.
+- Capturas de conferência: `tests/visual/capturar.mjs` e `tests/visual/demo.mjs` (roda cada demonstração até o fim).
+
+### Gate da design-taste-frontend
+- `lint.mjs src`: 0 FAIL, 0 WARN (com exceções marcadas `taste-skill-ignore`, todas justificadas na linha).
+- `inspect.mjs` (home e as 4 páginas): restam só 2 FAIL, os dois **do design aprovado nas pranchetas**:
+  os kickers ("01 · finanças pessoais", "A garantia", "Como") e os fios entre as linhas de projeto, trajetória e números.
+  Removê-los muda a direção aprovada; fica para o dono decidir.
+- WARN que ficam, com a defesa: tinta osso #ece9e1 (é a da direção C), nome e e-mail com `mix-blend-mode: difference`
+  (é o efeito central da lâmpada de lava), sem vídeo (não existe gravação dos projetos), monospace só em `<code>`,
+  muitos tamanhos de fonte, margem direita de 30 px em 768 px (o nome gigante em 15vw chega perto da borda).
+- Corrigido por causa do gate: Trabalho e Sobre em uma coluna até 1000 px (o título quebrava em 3 linhas em 768),
+  texto mínimo de 13 px, títulos da garantia encurtados, quarta captura por página, entradas das seções,
+  símbolos ✓/✕ trocados (o ✕ do menu virou ícone SVG).
+
+### Decisões
+- Duas raízes de layout (`app/(pt)` e `app/(en)`) para o `<html lang>` certo em cada idioma, sem biblioteca de i18n.
+- Links dos currículos em PDF e "Código no GitHub" do rodapé só aparecem quando existirem
+  (`CURRICULO` e `REPO_DO_SITE` em `src/data/projetos.ts`, hoje `null`).
+- `SITE_URL` (variável de ambiente) define o domínio do canonical e do hreflang; sem ela, usa localhost.
+
+### Bloqueios e limites
+- Não testado em aparelho real nem em Safari/Firefox (só Chrome no Windows, emulando 390 px).
+- Desempenho do filtro gooey não foi medido (o risco de >8 ms por quadro em tela grande continua em aberto).
+- O site ainda não foi publicado na Vercel; o repositório do portfólio ainda não tem remoto.
+
+### Antes de publicar
+1. Revisão do dono no site (`npm run build` e `npm run serve`), sobretudo kickers e fios (ver o gate).
+2. Criar o repositório no GitHub, ligar na Vercel (framework Next.js, saída `out/`) e definir `SITE_URL`;
+   depois preencher `REPO_DO_SITE`.
+3. Fazer os currículos em PDF (PT e EN), pôr em `public/` e preencher `CURRICULO`.
+4. Pendências fora deste repositório (seção "Fora deste repositório"): MIT em Pontual, Pulo e Confere (o site já diz MIT), README do Confere, link do Sobra, links.txt.
+5. Conferir de novo os números nos READMEs dos projetos.

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "portfolio-out", "runtimeExecutable": "node", "runtimeArgs": ["scripts/servir.mjs"], "port": 4321 }
+  ]
+}

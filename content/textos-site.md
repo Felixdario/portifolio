@@ -205,3 +205,23 @@ Linha do tempo (o EN troca os meses por abreviações em inglês: aug 2025 – n
 | `rodape.topo` | voltar ao topo ↑ | back to top ↑ |
 
 Os dois PDFs de currículo continuam `[EM CONSTRUÇÃO]`: o link aparece só quando o arquivo existir.
+
+## Fase 3: páginas de Sobra, Pulo e Confere (2026-11-18)
+
+Os textos das outras três páginas de projeto (resumo, demonstração, "como", números, "não medido", stack e alt das
+capturas) foram escritos na construção, direto em `src/i18n/pt.ts` e `src/i18n/en.ts`, a partir de
+`content/conteudo.md`. A partir daqui, **os arquivos de `src/i18n/` são a fonte dos textos do site**; este arquivo
+fica como registro da Fase 2. Um teste (`tests/unit/i18n.test.ts`) garante as mesmas chaves nos dois idiomas.
+
+Títulos da garantia encurtados para caber em duas linhas no celular:
+
+| Projeto | PT | EN |
+| - | - | - |
+| Sobra | R$ 10,00 em 3. A soma ainda dá 10,00. | R$ 10.00 in 3. Still adds up to 10.00. |
+| Pulo | Cai o worker. Nenhum clique em dobro. | The worker dies. No click counts twice. |
+| Confere | 4 versões do currículo. A mesma nota.* | 4 versions of a résumé. One score.* |
+
+Demonstrações (cada uma ligada a um teste real):
+- Sobra: `allocate(cents(1000), 3)` → [334, 333, 333] (`financas/packages/shared/src/money/arithmetic.test.ts`).
+- Pulo: "crash entre o COMMIT e o XACK", 300 eventos e 300 linhas no fim (`encurtador/apps/worker/test/integration/pipeline.test.ts`).
+- Confere: caso b03 e contrafactuais c01, c02 e c08, todos com `nota_referencia: 78` (`curriculo/evals/casos/`).
