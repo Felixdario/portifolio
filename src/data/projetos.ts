@@ -91,7 +91,7 @@ export const SPORTLINK = {
 /** Currículos em PDF: [EM CONSTRUÇÃO]. O link só aparece quando o arquivo existir em public/. */
 export const CURRICULO: { pt: string | null; en: string | null } = { pt: null, en: null };
 
-/** Repositório deste site: ainda não publicado. Com null, o rodapé mostra o texto sem link. */
-export const REPO_DO_SITE: string | null = null;
+/** Repositório deste site (link "Código no GitHub" do rodapé). Com null, o rodapé mostra o texto sem link. */
+export const REPO_DO_SITE: string | null = 'https://github.com/Felixdario/portifolio';
 
 export const SITE_URL = process.env.SITE_URL ?? 'http://localhost:3000';

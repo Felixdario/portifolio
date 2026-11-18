@@ -156,18 +156,18 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 ### Decisões
 - Duas raízes de layout (`app/(pt)` e `app/(en)`) para o `<html lang>` certo em cada idioma, sem biblioteca de i18n.
 - Links dos currículos em PDF e "Código no GitHub" do rodapé só aparecem quando existirem
-  (`CURRICULO` e `REPO_DO_SITE` em `src/data/projetos.ts`, hoje `null`).
+  (`CURRICULO` e `REPO_DO_SITE` em `src/data/projetos.ts`; `CURRICULO` ainda é `null`).
 - `SITE_URL` (variável de ambiente) define o domínio do canonical e do hreflang; sem ela, usa localhost.
 
 ### Bloqueios e limites
 - Não testado em aparelho real nem em Safari/Firefox (só Chrome no Windows, emulando 390 px).
 - Desempenho do filtro gooey não foi medido (o risco de >8 ms por quadro em tela grande continua em aberto).
-- O site ainda não foi publicado na Vercel; o repositório do portfólio ainda não tem remoto.
+- O site ainda não foi publicado na Vercel; o repositório está em https://github.com/Felixdario/portifolio.
 
 ### Antes de publicar
 1. Revisão do dono no site (`npm run build` e `npm run serve`), sobretudo kickers e fios (ver o gate).
 2. Criar o repositório no GitHub, ligar na Vercel (framework Next.js, saída `out/`) e definir `SITE_URL`;
-   depois preencher `REPO_DO_SITE`.
+   (`REPO_DO_SITE` já aponta para o repositório.)
 3. Fazer os currículos em PDF (PT e EN), pôr em `public/` e preencher `CURRICULO`.
 4. Pendências fora deste repositório (seção "Fora deste repositório"): MIT em Pontual, Pulo e Confere (o site já diz MIT), README do Confere, link do Sobra, links.txt.
 5. Conferir de novo os números nos READMEs dos projetos.
