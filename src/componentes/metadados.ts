@@ -21,9 +21,23 @@ export function metaHome(locale: Locale): Metadata {
       canonical: rota.home(locale),
       languages: { 'pt-BR': rota.home('pt'), en: rota.home('en'), 'x-default': rota.home('pt') },
     },
-    openGraph: { title: t.metaTitulo, description: t.metaDescricao, type: 'website', locale: locale === 'pt' ? 'pt_BR' : 'en_US' },
+    openGraph: {
+      title: t.metaTitulo,
+      description: t.metaDescricao,
+      type: 'website',
+      url: rota.home(locale),
+      siteName: 'Eduardo Felix',
+      locale: ogLocale(locale),
+      images: [previa(`home-${locale}`, t.metaTitulo)],
+    },
+    twitter: { card: 'summary_large_image', title: t.metaTitulo, description: t.metaDescricao, images: [`/og/home-${locale}.png`] },
   };
 }
+
+const ogLocale = (l: Locale) => (l === 'pt' ? 'pt_BR' : 'en_US');
+
+/** Imagens de prévia 1200×630 em public/og/, geradas por `npm run previas` (scripts/previas.mjs). */
+const previa = (nome: string, alt: string) => ({ url: `/og/${nome}.png`, width: 1200, height: 630, alt });
 
 export function metaProjeto(locale: Locale, slug: Slug): Metadata {
   const t = dic(locale);
@@ -38,6 +52,15 @@ export function metaProjeto(locale: Locale, slug: Slug): Metadata {
       canonical: rota.projeto(locale, slug),
       languages: { 'pt-BR': rota.projeto('pt', slug), en: rota.projeto('en', slug), 'x-default': rota.projeto('pt', slug) },
     },
-    openGraph: { title: titulo, description: p.pagina.resumo, type: 'article', images: [`/img/${slug}-capa.webp`] },
+    openGraph: {
+      title: titulo,
+      description: p.pagina.resumo,
+      type: 'article',
+      url: rota.projeto(locale, slug),
+      siteName: 'Eduardo Felix',
+      locale: ogLocale(locale),
+      images: [previa(`${slug}-${locale}`, titulo)],
+    },
+    twitter: { card: 'summary_large_image', title: titulo, description: p.pagina.resumo, images: [`/og/${slug}-${locale}.png`] },
   };
 }

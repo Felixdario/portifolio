@@ -216,6 +216,12 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 ### Próximo passo
 Nada pendente antes de divulgar. Para mudar o currículo, editar `scripts/curriculos.mjs` e rodar
 `npm run curriculos` (gera os PDFs de uma página em `public/`, com texto selecionável).
+Prévias de compartilhamento (Open Graph e Twitter, 1200×630) em `public/og/`, uma por página e idioma,
+geradas por `npm run previas` (`scripts/previas.mjs` repete os números de `src/i18n`: rodar de novo se mudarem).
+`sitemap.xml` e `robots.txt` saem de `src/app/sitemap.ts` e `src/app/robots.ts`.
+
+Melhorias que ficam: recriar a demo do Pontual a partir da data de hoje (hoje fica com as datas do
+deploy), testar em Safari/Firefox e em celular real, decidir sobre kickers e fios (gate de design).
 
 Feito em 2026-11-23: currículos em PDF (PT e EN) ligados no contato do site; números conferidos rodando
 as suítes: Sobra 1091 testes (api 167, mobile 164), Pulo 538 unitários e 172 de integração (db 6,
