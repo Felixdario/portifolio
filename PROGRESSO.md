@@ -216,5 +216,7 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 ### Próximo passo
 Antes de divulgar:
 1. Currículos em PDF (PT e EN) em `public/` e `CURRICULO` preenchido em `src/data/projetos.ts`.
-2. Licença MIT nos repositórios que faltam (Pontual, Pulo, Confere).
-3. Conferir de novo os números nos READMEs dos projetos.
+2. Conferir de novo os números nos READMEs dos projetos.
+
+Feito em 2026-11-23: licença MIT no Pontual, Pulo e Confere; link "no ar" nos READMEs dos 4 projetos
+e no README do perfil (com o link do portfólio).
