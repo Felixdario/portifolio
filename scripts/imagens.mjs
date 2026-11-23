@@ -19,14 +19,14 @@ for (const projeto of await readdir(ORIGEM)) {
     const { width, height } = await sharp(entrada).metadata();
     const celular = width < 900;
     if (celular) {
-      await sharp(entrada).webp({ quality: 80 }).toFile(path.join(DESTINO, `${nome}.webp`));
+      await sharp(entrada).webp({ quality: 90, smartSubsample: true }).toFile(path.join(DESTINO, `${nome}.webp`));
     } else {
       const alto = Math.min(height, Math.round(width / 1.6));
       for (const largura of [1440, 800]) {
         await sharp(entrada)
           .extract({ left: 0, top: 0, width, height: alto })
           .resize({ width: largura })
-          .webp({ quality: 78 })
+          .webp({ quality: 90, smartSubsample: true })
           .toFile(path.join(DESTINO, `${nome}${largura === 800 ? '-800' : ''}.webp`));
       }
     }

@@ -220,7 +220,18 @@ Prévias de compartilhamento (Open Graph e Twitter, 1200×630) em `public/og/`, 
 geradas por `npm run previas` (`scripts/previas.mjs` repete os números de `src/i18n`: rodar de novo se mudarem).
 `sitemap.xml` e `robots.txt` saem de `src/app/sitemap.ts` e `src/app/robots.ts`.
 
-Melhorias que ficam: testar em Safari/Firefox e em celular real, decidir sobre kickers e fios (gate de design).
+Melhorias que ficam: capturas em 2× (hoje têm 1440 px; em tela de alta densidade a "larga" ainda é
+ampliada 1,8×), testar num iPhone real, decidir sobre kickers e fios (gate de design).
+
+Navegadores e desempenho (2026-11-23):
+- `E2E_TODOS=1 npx playwright test` roda também Firefox, WebKit e iPhone 13 emulado: 34 + 34 + 32 passando.
+  O Firefox do Playwright não abre neste Windows (falta o runtime do Visual C++); rodou na imagem
+  `mcr.microsoft.com/playwright:v1.65.1-noble` no Docker.
+- Lava (`tests/visual/medir-lava.mjs`): com GPU, 238 fps (monitor de 240 Hz), quadro p95 ≤ 5,2 ms até
+  2560×1440 e com CPU 4× mais lenta; 0,15 a 0,6 ms de CPU por quadro. Sem GPU, ~97 fps sem quadros perdidos.
+- Capturas (`tests/visual/medir-imagens.mjs`): o `sizes` dizia 760 px para todas, e as "larga" (1792 px na
+  tela) usavam a versão de 800 px, ampliada 2,24×. Agora o `sizes` segue o layout, a galeria vai até
+  1440 px e o WebP saiu de qualidade 78 para 90: em 1× nenhuma captura é ampliada.
 
 Demo do Pontual com a data de hoje: com `DEMO_RENOVAR_DIARIA=true` (ligada no Render), a API refaz o
 estabelecimento demo ao subir e a cada hora quando ele foi semeado noutro dia (fuso de São Paulo).

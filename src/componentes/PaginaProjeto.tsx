@@ -11,6 +11,16 @@ import { DemoPulo } from './demos/Pulo';
 import { DemoConfere } from './demos/Confere';
 import styles from './projeto.module.css';
 
+/**
+ * Largura exibida de cada forma de captura, para o navegador escolher entre 800w e 1440w. No celular a
+ * grade tem 2 colunas e as duas formas ocupam a linha; no desktop a "desktop" ocupa 2 de 4 colunas e a
+ * "larga" a linha toda, com a galeria limitada a 1440 px (a largura das capturas) em projeto.module.css.
+ */
+const TAMANHOS = {
+  desktop: '(max-width: 760px) calc(100vw - 32px), min(calc(50vw - 76px), 708px)',
+  larga: '(max-width: 760px) calc(100vw - 32px), min(calc(100vw - 128px), 1440px)',
+} as const;
+
 export function PaginaProjeto({ locale, slug }: { locale: Locale; slug: Slug }) {
   const t = dic(locale);
   const d = projeto(slug);
@@ -107,7 +117,7 @@ export function PaginaProjeto({ locale, slug }: { locale: Locale; slug: Slug }) 
                   <img
                     src={c.forma !== 'celular' ? `/img/${c.arquivo}-800.webp` : `/img/${c.arquivo}.webp`}
                     srcSet={c.forma !== 'celular' ? `/img/${c.arquivo}-800.webp 800w, /img/${c.arquivo}.webp 1440w` : undefined}
-                    sizes={c.forma !== 'celular' ? '(max-width: 760px) 92vw, 760px' : undefined}
+                    sizes={c.forma !== 'celular' ? TAMANHOS[c.forma] : undefined}
                     width={c.forma !== 'celular' ? 800 : 390}
                     height={c.forma !== 'celular' ? 500 : 844}
                     alt={pg.capturasAlt[i] ?? ''}
