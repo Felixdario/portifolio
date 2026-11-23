@@ -61,7 +61,7 @@ Nenhum dos quatro tem demo publicada: todos rodam localmente com conta demo e da
   - 34 decisões registradas em `docs/decisoes.md`. [fonte: financas/README.md]
 - **O que demonstra:** monorepo com API, web e mobile sob um contrato tipado; segurança de sessão (rotação, reuso, cookie httpOnly + CSRF); cuidado com dinheiro e datas; acessibilidade e pior caso testados. [fonte: financas/README.md; perfil-github/README.md]
 - **Números:**
-  - 1087 testes, todos passando (shared 331, tokens 225, i18n 41, client 63, api 165, web 100, mobile 162). [fonte: financas/README.md]
+  - 1091 testes, todos passando (shared 331, tokens 225, i18n 41, client 63, api 167, web 100, mobile 164). [fonte: financas/README.md]
   - 0 violações de axe numa passada no Chrome real com `@axe-core/playwright` (claro/escuro, 1440/390 px). [fonte: financas/README.md]
 - **Não medido / não testado:**
   - App mobile validado só no Expo web e nos testes com Jest; não foi aberto num aparelho real. [fonte: financas/README.md]
@@ -123,7 +123,7 @@ Nenhum dos quatro tem demo publicada: todos rodam localmente com conta demo e da
   - Redirect com cache: p95 de 6,42 ms e 10.129 req/s num processo. [fonte: encurtador/README.md]
   - Com 5 M de cliques, o painel de um link lê agregados em 0,19–0,59 ms quente, contra 28–122 ms do `COUNT` na bruta. [fonte: encurtador/README.md]
   - 4 workers processam 100.000 eventos em 12,7–14,6 s, sem deadlock em 7 rodadas. [fonte: encurtador/README.md]
-  - Testes: 536 unitários, integração 42 + 34 + 25 + 68, consistência 8, E2E 17 (dos quais 10 de acessibilidade). [fonte: encurtador/README.md]
+  - Testes: 538 unitários, integração 42 + 37 + 25 + 68, consistência 8, E2E 17 (dos quais 10 de acessibilidade). [fonte: encurtador/README.md]
 - **Não medido / limitações:**
   - A consistência (8 de 8) não foi rodada de novo na última fase; o número é o registrado em `docs/performance.md`. [fonte: encurtador/README.md]
   - A visão da conta fria leva 319 ms; ponto fraco declarado. [fonte: encurtador/README.md]
@@ -155,7 +155,7 @@ Nenhum dos quatro tem demo publicada: todos rodam localmente com conta demo e da
   - Precisão / cobertura de competências com regras: 0,97 / 1,00; nota dentro da faixa em 93,8 % (15 de 16). [fonte: curriculo/README.md]
   - Diferença de nota nos contrafactuais (nome, gênero, idade): 0. [fonte: curriculo/README.md]
   - Dados pessoais anotados removidos: 100 % (204 de 204). [fonte: curriculo/README.md]
-  - 835 testes rápidos (`make check`) e 36 testes de integração. [fonte: curriculo/README.md]
+  - 846 testes rápidos (`make check`) e 36 testes de integração. [fonte: curriculo/README.md]
   - Taxonomia com 133 competências. [fonte: curriculo/README.md]
 - **Não medido** (manter assim no site):
   - Precisão e cobertura da extração feita pelo modelo: não medidas. [fonte: curriculo/README.md]

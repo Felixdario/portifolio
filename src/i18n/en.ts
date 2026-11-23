@@ -22,7 +22,7 @@ export const en: Dicionario = {
     linkSobre: '→ about me',
     listaRotulo: 'Featured projects',
     fatos: {
-      sobra: 'finance, 1087 tests',
+      sobra: 'finance, 1091 tests',
       pontual: 'booking, 20 requests and 1 booking',
       pulo: 'links, every click once',
       confere: 'résumés with AI',
@@ -39,7 +39,7 @@ export const en: Dicionario = {
     sobra: {
       nome: 'Sobra',
       kicker: '01 · personal finance',
-      numero: '1087',
+      numero: '1091',
       numeroLegenda: 'tests passing',
       frase:
         "Personal finance: the mobile app logs a purchase on the spot, and the web dashboard shows where the month's money went.",
@@ -74,7 +74,7 @@ export const en: Dicionario = {
           '**A session that defends itself.** Rotating refresh tokens: presenting an already used token revokes the whole family of that login.',
         ],
         numeros: [
-          { valor: '1087', texto: 'tests, all passing: shared 331, tokens 225, i18n 41, client 63, api 165, web 100 and mobile 162' },
+          { valor: '1091', texto: 'tests, all passing: shared 331, tokens 225, i18n 41, client 63, api 167, web 100 and mobile 164' },
           { valor: '0', texto: 'axe violations in real Chrome, in light and dark themes, at 1440 and 390 px' },
           { valor: '34', texto: 'decisions written down in `docs/decisoes.md`' },
           { valor: '3', texto: 'taps to log a purchase: only amount and category are required' },
@@ -187,7 +187,7 @@ export const en: Dicionario = {
           { valor: '6.42 ms', texto: 'cached redirect p95, at 10,129 req/s in one process' },
           { valor: '0.19 ms', texto: 'to 0.59 ms for a link dashboard with 5 million clicks, against 28 to 122 ms for COUNT on the raw table' },
           { valor: '100,000', texto: 'events processed by 4 workers in 12.7 to 14.6 s, with no deadlock across 7 rounds' },
-          { valor: '536', texto: 'unit tests, plus 169 integration, 8 consistency and 17 E2E' },
+          { valor: '538', texto: 'unit tests, plus 172 integration, 8 consistency and 17 E2E' },
         ],
         numerosRessalva:
           'Measured on a local development machine: Ryzen 5 5500, Windows 11, PostgreSQL and Redis on Docker Desktop.',
@@ -246,7 +246,7 @@ export const en: Dicionario = {
           { valor: '44/46', texto: 'prompt-injection variants detected, with 0 false positives in 89 legitimate sentences' },
           { valor: '204/204', texto: 'annotated personal data items removed by anonymization' },
           { valor: '0.97', texto: 'precision and 1.00 recall on skills, with rules' },
-          { valor: '871', texto: 'tests: 835 fast and 36 integration' },
+          { valor: '882', texto: 'tests: 846 fast and 36 integration' },
         ],
         numerosRessalva:
           'The numbers measure the rules and the surrounding code, on 30 fictional cases written by the author. They do not measure a language model.',

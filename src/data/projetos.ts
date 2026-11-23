@@ -94,8 +94,11 @@ export const SPORTLINK = {
   api: 'https://github.com/Felixdario/sportlink-api',
 };
 
-/** Currículos em PDF: [EM CONSTRUÇÃO]. O link só aparece quando o arquivo existir em public/. */
-export const CURRICULO: { pt: string | null; en: string | null } = { pt: null, en: null };
+/** Currículos em PDF em public/, gerados por `npm run curriculos` (scripts/curriculos.mjs). Com null, o link some. */
+export const CURRICULO: { pt: string | null; en: string | null } = {
+  pt: '/eduardo-felix-curriculo-pt.pdf',
+  en: '/eduardo-felix-resume-en.pdf',
+};
 
 /** Repositório deste site (link "Código no GitHub" do rodapé). Com null, o rodapé mostra o texto sem link. */
 export const REPO_DO_SITE: string | null = 'https://github.com/Felixdario/portifolio';

@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
-    "serve": "node scripts/servir.mjs"
+    "serve": "node scripts/servir.mjs",
+    "curriculos": "node scripts/curriculos.mjs"
   },
   "engines": {
     "node": ">=20.9"

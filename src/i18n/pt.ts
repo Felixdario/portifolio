@@ -24,7 +24,7 @@ export const pt: Dicionario = {
     linkSobre: '→ sobre mim',
     listaRotulo: 'Projetos em destaque',
     fatos: {
-      sobra: 'finanças, 1087 testes',
+      sobra: 'finanças, 1091 testes',
       pontual: 'agenda, 20 pedidos e 1 reserva',
       pulo: 'links, cada clique uma vez',
       confere: 'currículos com IA',
@@ -41,7 +41,7 @@ export const pt: Dicionario = {
     sobra: {
       nome: 'Sobra',
       kicker: '01 · finanças pessoais',
-      numero: '1087',
+      numero: '1091',
       numeroLegenda: 'testes passando',
       frase:
         'Controle financeiro pessoal: o app mobile lança o gasto na hora, e o painel web mostra para onde foi o dinheiro do mês.',
@@ -76,7 +76,7 @@ export const pt: Dicionario = {
           '**Sessão que se defende.** Refresh token rotativo: reapresentar um token já usado derruba a família inteira daquele login.',
         ],
         numeros: [
-          { valor: '1087', texto: 'testes, todos passando: shared 331, tokens 225, i18n 41, client 63, api 165, web 100 e mobile 162' },
+          { valor: '1091', texto: 'testes, todos passando: shared 331, tokens 225, i18n 41, client 63, api 167, web 100 e mobile 164' },
           { valor: '0', texto: 'violações de axe no Chrome real, nos temas claro e escuro, em 1440 e 390 px' },
           { valor: '34', texto: 'decisões registradas por escrito em `docs/decisoes.md`' },
           { valor: '3', texto: 'toques para lançar um gasto: só valor e categoria são obrigatórios' },
@@ -189,7 +189,7 @@ export const pt: Dicionario = {
           { valor: '6,42 ms', texto: 'p95 do redirect com cache, com 10.129 req/s num processo' },
           { valor: '0,19 ms', texto: 'a 0,59 ms para o painel de um link com 5 milhões de cliques, contra 28 a 122 ms do COUNT na tabela bruta' },
           { valor: '100.000', texto: 'eventos processados por 4 workers em 12,7 a 14,6 s, sem deadlock em 7 rodadas' },
-          { valor: '536', texto: 'testes unitários, mais 169 de integração, 8 de consistência e 17 E2E' },
+          { valor: '538', texto: 'testes unitários, mais 172 de integração, 8 de consistência e 17 E2E' },
         ],
         numerosRessalva:
           'Medido numa máquina local de desenvolvimento: Ryzen 5 5500, Windows 11, PostgreSQL e Redis no Docker Desktop.',
@@ -248,7 +248,7 @@ export const pt: Dicionario = {
           { valor: '44/46', texto: 'variantes de prompt injection detectadas, com 0 falsos positivos em 89 frases legítimas' },
           { valor: '204/204', texto: 'dados pessoais anotados removidos na anonimização' },
           { valor: '0,97', texto: 'de precisão e 1,00 de cobertura de competências, com regras' },
-          { valor: '871', texto: 'testes: 835 rápidos e 36 de integração' },
+          { valor: '882', texto: 'testes: 846 rápidos e 36 de integração' },
         ],
         numerosRessalva:
           'Os números medem as regras e o código ao redor, sobre 30 casos fictícios escritos pelo autor. Não medem um modelo de linguagem.',

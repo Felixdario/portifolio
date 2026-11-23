@@ -214,9 +214,14 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
   aviso de que a primeira visita pode levar até um minuto.
 
 ### Próximo passo
-Antes de divulgar:
-1. Currículos em PDF (PT e EN) em `public/` e `CURRICULO` preenchido em `src/data/projetos.ts`.
-2. Conferir de novo os números nos READMEs dos projetos.
+Nada pendente antes de divulgar. Para mudar o currículo, editar `scripts/curriculos.mjs` e rodar
+`npm run curriculos` (gera os PDFs de uma página em `public/`, com texto selecionável).
+
+Feito em 2026-11-23: currículos em PDF (PT e EN) ligados no contato do site; números conferidos rodando
+as suítes: Sobra 1091 testes (api 167, mobile 164), Pulo 538 unitários e 172 de integração (db 6,
+redirect 37), Confere 846 rápidos (882 no total), Pontual sem mudança. Corrigidos no site, nos READMEs
+do Sobra, do Pulo e do Confere e no README do perfil. Num rodada com as 4 suítes em paralelo, um teste
+do mobile do Sobra falhou uma vez e passou sozinho (instável sob carga).
 
 Feito em 2026-11-23: licença MIT no Pontual, Pulo e Confere; link "no ar" nos READMEs dos 4 projetos
 e no README do perfil (com o link do portfólio).

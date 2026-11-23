@@ -46,7 +46,7 @@ ressalva vai junto (asterisco no Confere). O inglês é tradução livre, não l
 | Chave | PT | EN |
 | - | - | - |
 | `kicker` | 01 · finanças pessoais | 01 · personal finance |
-| `numero` | 1087 | 1087 |
+| `numero` | 1091 | 1091 |
 | `numero.legenda` | testes passando | tests passing |
 | `frase` | Controle financeiro pessoal: o app mobile lança o gasto na hora, e o painel web mostra para onde foi o dinheiro do mês. | Personal finance: the mobile app logs a purchase on the spot, and the web dashboard shows where the month's money went. |
 | `garantia` | Dinheiro guardado em centavos inteiros. Nada passa por float. | Money stored as whole cents. Nothing goes through a float. |
