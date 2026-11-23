@@ -220,8 +220,13 @@ Prévias de compartilhamento (Open Graph e Twitter, 1200×630) em `public/og/`, 
 geradas por `npm run previas` (`scripts/previas.mjs` repete os números de `src/i18n`: rodar de novo se mudarem).
 `sitemap.xml` e `robots.txt` saem de `src/app/sitemap.ts` e `src/app/robots.ts`.
 
-Melhorias que ficam: capturas em 2× (hoje têm 1440 px; em tela de alta densidade a "larga" ainda é
-ampliada 1,8×), testar num iPhone real, decidir sobre kickers e fios (gate de design).
+Melhorias que ficam: testar num iPhone real, decidir sobre kickers e fios (gate de design).
+
+Capturas em 2× (2026-11-23): as 16 telas de desktop e celular foram refeitas com deviceScaleFactor 2
+(2880 px no desktop, 780 px no celular), com os mesmos estados de antes. Pontual, Pulo e Confere pelos
+`e2e/capturas.spec.ts` de cada repositório (com uma config temporária em 2×, nada versionado lá; a
+capa do Pulo usa o banco `encurtador_bench` com 6 M de cliques); Sobra por `tests/visual/capturar-sobra.mjs`.
+`npm run imagens` gera 800, 1440 e 2880 px; nenhuma captura é ampliada em 1×, 1,25×, 2× ou 3×.
 
 Navegadores e desempenho (2026-11-23):
 - `E2E_TODOS=1 npx playwright test` roda também Firefox, WebKit e iPhone 13 emulado: 34 + 34 + 32 passando.

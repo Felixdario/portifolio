@@ -127,7 +127,7 @@ export function ListaProjetos({ linhas, ver, repo, aoVivo }: Props) {
             <div className={styles.pjCapa}>
               <img
                 src={`/img/${p.capa}-800.webp`}
-                srcSet={`/img/${p.capa}-800.webp 800w, /img/${p.capa}.webp 1440w`}
+                srcSet={`/img/${p.capa}-800.webp 800w, /img/${p.capa}.webp 1440w, /img/${p.capa}-2880.webp 2880w`}
                 sizes="(max-width: 760px) 92vw, 440px"
                 width={800}
                 height={500}

@@ -17,7 +17,7 @@ for (const [w, dpr] of [[1920, 1], [1920, 1.25], [1440, 2], [390, 3]]) {
       [...document.querySelectorAll('img')].map((i) => {
         const caixa = i.getBoundingClientRect();
         // object-fit: cover => a imagem é ampliada até cobrir a caixa
-        const nome = i.currentSrc.split('/').pop(); const arquivo = /-800.webp$/.test(nome) ? 800 : i.srcset ? 1440 : i.naturalWidth; const alto = arquivo * (i.naturalHeight / i.naturalWidth); const escala = Math.max(caixa.width / arquivo, caixa.height / alto) * dpr;
+        const nome = i.currentSrc.split('/').pop(); const arquivo = /-800.webp$/.test(nome) ? 800 : /-2880.webp$/.test(nome) ? 2880 : i.srcset ? 1440 : i.naturalWidth; const alto = arquivo * (i.naturalHeight / i.naturalWidth); const escala = Math.max(caixa.width / arquivo, caixa.height / alto) * dpr;
         return { src: i.currentSrc.split('/').pop(), caixa: Math.round(caixa.width), natural: arquivo, ampliacao: +escala.toFixed(2) };
       }), dpr);
     pior.push(...r.map((x) => ({ rota, ...x })));

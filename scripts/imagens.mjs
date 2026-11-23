@@ -1,6 +1,7 @@
 // Converte as capturas de assets/capturas/<projeto>/*.png em WebP para public/img/.
-// Desktop: recorta o topo em 16:10 e gera 1440 e 800 px de largura.
-// Celular (mais alto que largo): mantém a proporção e gera a largura nativa.
+// As capturas são em 2× (2880 px no desktop, 780 px no celular).
+// Desktop: recorta o topo em 16:10 e gera 2880, 1440 e 800 px de largura (srcset em PaginaProjeto).
+// Celular (mais estreito que 900 px): mantém a proporção e gera a largura nativa.
 // Uso: npm run imagens
 import { readdir, mkdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -22,12 +23,12 @@ for (const projeto of await readdir(ORIGEM)) {
       await sharp(entrada).webp({ quality: 90, smartSubsample: true }).toFile(path.join(DESTINO, `${nome}.webp`));
     } else {
       const alto = Math.min(height, Math.round(width / 1.6));
-      for (const largura of [1440, 800]) {
+      for (const largura of [2880, 1440, 800]) {
         await sharp(entrada)
           .extract({ left: 0, top: 0, width, height: alto })
           .resize({ width: largura })
           .webp({ quality: 90, smartSubsample: true })
-          .toFile(path.join(DESTINO, `${nome}${largura === 800 ? '-800' : ''}.webp`));
+          .toFile(path.join(DESTINO, `${nome}${largura === 1440 ? '' : `-${largura}`}.webp`));
       }
     }
     console.log(nome, celular ? 'celular' : 'desktop');
