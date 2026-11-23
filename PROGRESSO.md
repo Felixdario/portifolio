@@ -162,7 +162,7 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 ### Bloqueios e limites
 - Não testado em aparelho real nem em Safari/Firefox (só Chrome no Windows, emulando 390 px).
 - Desempenho do filtro gooey não foi medido (o risco de >8 ms por quadro em tela grande continua em aberto).
-- O site ainda não foi publicado na Vercel; o repositório está em https://github.com/Felixdario/portifolio.
+- Publicado em https://eduardofelixdev.vercel.app; o repositório está em https://github.com/Felixdario/portifolio.
 
 ### Antes de publicar
 1. Revisão do dono no site (`npm run build` e `npm run serve`), sobretudo kickers e fios (ver o gate).
@@ -191,10 +191,10 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 ### Limites conhecidos
 - Planos grátis do Render: a API dorme após 15 min sem uso; a primeira visita espera 30 a 60 s.
 - Upstash grátis: só 1 banco (é do Confere) e 500 mil comandos/mês; o worker consulta a fila a cada 2 s.
-- Pulo: sem base de geolocalização (países vazios); o Key Value grátis tem 25 MB e não persiste
+- Pulo: o Key Value grátis tem 25 MB e não persiste
   (stream limitado a 20.000 entradas com `CLICKS_MAXLEN`).
-- Confere: sem o modelo de embeddings (só taxonomia). **PDF com texto em imagem ou desenho** (Canva e afins)
-  sai com nota 0, porque nada é lido: pendência a tratar no Confere (OCR ou aviso claro).
+- Confere: sem o modelo de embeddings (só taxonomia). PDF com texto em imagem ou desenho (Canva e afins)
+  é recusado com explicação (ver abaixo); não há OCR.
 - Os dados demo do Pontual ficam com as datas do último deploy.
 
 ### Correções depois da publicação (2026-11-23)
@@ -208,10 +208,13 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
   para `/opt/render/project/src/data/geo/`.
 - **Confere, PDF com texto em imagem ou desenho:** página com menos de 200 caracteres e muito conteúdo
   visual entra em `paginas_sem_texto`; se todas as páginas caem nisso, o upload é recusado com
-  explicação, em vez de nota 0 (commit `0844726`, 4 testes). Testado localmente; falta testar no ar.
+  explicação, em vez de nota 0 (commit `0844726`, 4 testes). Testado no ar: um PDF fictício desenhado
+  (1 linha de texto e 600 curvas) recebe "Quase nada deste PDF pôde ser lido…" em vez de nota 0.
 - **Portfólio:** cada projeto ganhou "→ ver no ar" na home e o link da demo na ficha da página, com o
   aviso de que a primeira visita pode levar até um minuto.
 
 ### Próximo passo
-1. Confere: enviar no site no ar um PDF desenhado (há um fictício gerado pelos testes) e conferir a recusa.
-2. Antes de divulgar: currículos em PDF, MIT nos repositórios que faltam, conferir os números.
+Antes de divulgar:
+1. Currículos em PDF (PT e EN) em `public/` e `CURRICULO` preenchido em `src/data/projetos.ts`.
+2. Licença MIT nos repositórios que faltam (Pontual, Pulo, Confere).
+3. Conferir de novo os números nos READMEs dos projetos.
