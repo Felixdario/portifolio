@@ -35,6 +35,7 @@ export const pt: Dicionario = {
     intro: 'Quatro projetos de 2026. Cada um promete uma coisa, e um teste prova que ela vale.',
     ver: '→ ver o projeto',
     repo: '→ repositório',
+    aoVivo: '→ ver no ar',
   },
   projetos: {
     sobra: {
@@ -51,7 +52,7 @@ export const pt: Dicionario = {
         meta: '01 · finanças pessoais · 2026',
         resumo:
           'Controle financeiro pessoal que responde quanto você tem agora, para onde foi o dinheiro este mês e quanto sobra. O app mobile lança o gasto na hora; o painel web explica o mês.',
-        demo: 'roda localmente, com usuário demo e dados fictícios',
+        demo: 'no ar, com usuário demo e dados fictícios',
         garantiaTitulo: 'R$ 10,00 em 3. A soma ainda dá 10,00.',
         demonstracao: {
           botao: 'Dividir em 3',
@@ -106,7 +107,7 @@ export const pt: Dicionario = {
         meta: '02 · agendamento online · 2026',
         resumo:
           'Agendamento online que não deixa marcar duas vezes o mesmo horário. O cliente reserva sozinho pelo celular, e a barbearia, o salão ou a clínica acompanha a agenda num painel.',
-        demo: 'roda localmente, com conta demo e dados fictícios',
+        demo: 'no ar, com conta demo e dados fictícios',
         garantiaTitulo: '20 pedidos para o mesmo horário. 1 reserva.',
         demonstracao: {
           botao: 'Enviar os 20 pedidos',
@@ -161,7 +162,7 @@ export const pt: Dicionario = {
         meta: '03 · encurtador de links · 2026',
         resumo:
           'Encurtador de URLs com analytics que conta cada clique humano uma vez, com robôs e prévias do WhatsApp à parte, sem deixar o redirecionamento lento.',
-        demo: 'roda localmente, com conta demo e dados fictícios',
+        demo: 'no ar, com conta demo e dados fictícios',
         garantiaTitulo: 'Cai o worker. Nenhum clique em dobro.',
         demonstracao: {
           botao: 'Derrubar o worker',
@@ -220,7 +221,7 @@ export const pt: Dicionario = {
         meta: '04 · currículos com IA · 2026',
         resumo:
           'Cole a vaga, envie o currículo e veja cada requisito com o trecho que o comprova, ou a falta dele. A IA lê o currículo; quem dá a nota é o código.',
-        demo: 'roda localmente, num modo de demonstração por regras, sem chave de API',
+        demo: 'no ar, no modo de demonstração por regras, sem IA',
         garantiaTitulo: '4 versões do currículo. A mesma nota.*',
         demonstracao: {
           botao: 'Comparar as 4 versões',
@@ -270,6 +271,7 @@ export const pt: Dicionario = {
     papel,
     codigoRotulo: 'Código',
     demoRotulo: 'Demo',
+    demoAviso: 'Hospedagem gratuita: a primeira visita pode levar até um minuto enquanto o servidor acorda.',
     licencaRotulo: 'Licença',
     licenca: 'MIT',
     garantiaRotulo: 'A garantia',

@@ -33,6 +33,7 @@ export function Home({ locale }: { locale: Locale }) {
       ressalva: x.ressalva,
       href: rota.projeto(locale, p.slug),
       repo: p.repo,
+      aoVivo: p.aoVivo,
       capa: p.capa,
       capaAlt: x.capaAlt,
     };
@@ -62,7 +63,7 @@ export function Home({ locale }: { locale: Locale }) {
             </h2>
             <p className={styles.intro}>{t.pj.intro}</p>
           </div>
-          <ListaProjetos linhas={linhas} ver={t.pj.ver} repo={t.pj.repo} />
+          <ListaProjetos linhas={linhas} ver={t.pj.ver} repo={t.pj.repo} aoVivo={t.pj.aoVivo} />
         </section>
 
         <section id="trabalho" className={styles.secao} aria-labelledby="tb-titulo">

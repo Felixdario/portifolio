@@ -431,3 +431,7 @@
 .cabeca {
   background: var(--bg);
 }
+
+.aviso {
+  color: var(--ink-2);
+}

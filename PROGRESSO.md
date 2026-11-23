@@ -171,3 +171,47 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
 3. Fazer os currículos em PDF (PT e EN), pôr em `public/` e preencher `CURRICULO`.
 4. Pendências fora deste repositório (seção "Fora deste repositório"): MIT em Pontual, Pulo e Confere (o site já diz MIT), README do Confere, link do Sobra, links.txt.
 5. Conferir de novo os números nos READMEs dos projetos.
+
+## Publicação dos 4 projetos (concluída em 2026-11-22, tudo em planos grátis)
+
+| Projeto | Site (Vercel) | API (Render, plano Free) | Banco e fila |
+| - | - | - | - |
+| Pontual | https://pontual-zeta.vercel.app/b/navalha-e-cafe | pontual-api-88zx.onrender.com | Neon `pontual` |
+| Sobra | https://sobra-chi.vercel.app | sobra-api.onrender.com | SQLite no Render (recriado a cada início) |
+| Confere | https://confere-six.vercel.app | confere-api-uo27.onrender.com (API + worker arq) | Neon `confere` + Upstash Redis `confere` |
+| Pulo | https://pulo-two.vercel.app | pulo-api-h6ex.onrender.com e pulo-redirect.onrender.com (redirect + worker) | Neon `pulo` + Render Key Value `pulo-kv` |
+
+- Os bancos Neon foram criados pela integração da Vercel (Storage), na região EUA leste, como as APIs.
+- Cada site usa proxy same-origin `/api` (rewrites do Next ou `vercel.json`), para os cookies ficarem first-party.
+- Testado no ar: Pontual (página e horários), Sobra (login demo e F5 mantendo a sessão), Confere (análise nova
+  de ponta a ponta), Pulo (encurtar, redirect 302 e contador ao vivo subindo).
+- Mudanças feitas nos repositórios para o deploy: Pontual (porta via `PORT`), Sobra (`AUTH_COOKIE_PATH_PREFIX`),
+  Confere (URL do banco para asyncpg e `WORKER_INTERVALO_S`), Pulo (remove `channel_binding` da URL).
+
+### Limites conhecidos
+- Planos grátis do Render: a API dorme após 15 min sem uso; a primeira visita espera 30 a 60 s.
+- Upstash grátis: só 1 banco (é do Confere) e 500 mil comandos/mês; o worker consulta a fila a cada 2 s.
+- Pulo: sem base de geolocalização (países vazios); o Key Value grátis tem 25 MB e não persiste
+  (stream limitado a 20.000 entradas com `CLICKS_MAXLEN`).
+- Confere: sem o modelo de embeddings (só taxonomia). **PDF com texto em imagem ou desenho** (Canva e afins)
+  sai com nota 0, porque nada é lido: pendência a tratar no Confere (OCR ou aviso claro).
+- Os dados demo do Pontual ficam com as datas do último deploy.
+
+### Correções depois da publicação (2026-11-23)
+- **Pulo, POST em link 307/308:** preservava o método só no GET; agora o POST num link sem senha
+  responde 307/308 direto ao destino (commit `c312d53`, 3 testes de integração).
+- **Pulo, IP do visitante:** no Render quem conecta é `127.0.0.1` e a cadeia é cliente → Cloudflare →
+  rede 10.x. Com `TRUST_PROXY=10.0.0.0/8`, todo visitante virava `127.0.0.1` (bucket e visitante único
+  compartilhados, regra por país sem efeito). `TRUST_PROXY` agora tem loopback, 10/8 e as faixas da
+  Cloudflare, no redirect e na API; o `.env.example` do Pulo documenta isso. Testado: `demo-pais` → `/pt`.
+- **Pulo, geolocalização:** o build baixa a base DB-IP Lite (`geo:download`) e `GEO_*_MMDB` apontam
+  para `/opt/render/project/src/data/geo/`.
+- **Confere, PDF com texto em imagem ou desenho:** página com menos de 200 caracteres e muito conteúdo
+  visual entra em `paginas_sem_texto`; se todas as páginas caem nisso, o upload é recusado com
+  explicação, em vez de nota 0 (commit `0844726`, 4 testes). Testado localmente; falta testar no ar.
+- **Portfólio:** cada projeto ganhou "→ ver no ar" na home e o link da demo na ficha da página, com o
+  aviso de que a primeira visita pode levar até um minuto.
+
+### Próximo passo
+1. Confere: enviar no site no ar um PDF desenhado (há um fictício gerado pelos testes) e conferir a recusa.
+2. Antes de divulgar: currículos em PDF, MIT nos repositórios que faltam, conferir os números.

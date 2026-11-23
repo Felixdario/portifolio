@@ -68,7 +68,7 @@ export type Dicionario = {
     listaRotulo: string;
     fatos: Record<Slug, string>;
   };
-  pj: { titulo: string; intro: string; ver: string; repo: string };
+  pj: { titulo: string; intro: string; ver: string; repo: string; aoVivo: string };
   projetos: Record<Slug, TextosProjeto>;
   pagina: {
     voltar: string;
@@ -76,6 +76,8 @@ export type Dicionario = {
     papel: string;
     codigoRotulo: string;
     demoRotulo: string;
+    /** Aviso sobre a hospedagem grátis (o servidor dorme e acorda na primeira visita). */
+    demoAviso: string;
     licencaRotulo: string;
     licenca: string;
     garantiaRotulo: string;

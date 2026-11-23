@@ -42,7 +42,13 @@ export function PaginaProjeto({ locale, slug }: { locale: Locale; slug: Slug }) 
                 </a>
               </dd>
               <dt>{t.pagina.demoRotulo}</dt>
-              <dd>{pg.demo}</dd>
+              <dd>
+                <a href={d.aoVivo}>
+                  <strong>{new URL(d.aoVivo).host} →</strong>
+                </a>
+                <br />
+                {pg.demo}. <span className={styles.aviso}>{t.pagina.demoAviso}</span>
+              </dd>
               <dt>{t.pagina.licencaRotulo}</dt>
               <dd>{t.pagina.licenca}</dd>
             </dl>

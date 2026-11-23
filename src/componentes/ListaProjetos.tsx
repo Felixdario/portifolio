@@ -19,11 +19,12 @@ export type LinhaProjeto = {
   ressalva?: string;
   href: string;
   repo: string;
+  aoVivo: string;
   capa: string;
   capaAlt: string;
 };
 
-type Props = { linhas: LinhaProjeto[]; ver: string; repo: string };
+type Props = { linhas: LinhaProjeto[]; ver: string; repo: string; aoVivo: string };
 
 function gotasDaLinha(i: number, t: number, f: number) {
   const ph = i * 1.6;
@@ -69,7 +70,7 @@ function Gota({ i, cor, ativo, uid }: { i: number; cor: string; ativo: boolean; 
   );
 }
 
-export function ListaProjetos({ linhas, ver, repo }: Props) {
+export function ListaProjetos({ linhas, ver, repo, aoVivo }: Props) {
   const uid = idSeguro(useId());
   const [foco, setFoco] = useState(-1);
   return (
@@ -108,6 +109,10 @@ export function ListaProjetos({ linhas, ver, repo }: Props) {
               <p className={styles.pjLinks}>
                 <a href={p.href}>
                   {ver}
+                  <span className="sr"> · {p.nome}</span>
+                </a>
+                <a href={p.aoVivo}>
+                  {aoVivo}
                   <span className="sr"> · {p.nome}</span>
                 </a>
                 <a href={p.repo}>

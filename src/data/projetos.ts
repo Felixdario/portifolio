@@ -7,6 +7,8 @@ export type Projeto = {
   slug: Slug;
   cor: string;
   repo: string;
+  /** Demo no ar (Vercel + Render, planos grátis). */
+  aoVivo: string;
   capa: string;
   capturas: Captura[];
 };
@@ -16,6 +18,7 @@ export const PROJETOS: Projeto[] = [
     slug: 'sobra',
     cor: 'var(--sobra)',
     repo: 'https://github.com/Felixdario/Sobra',
+    aoVivo: 'https://sobra-chi.vercel.app',
     capa: 'sobra-capa',
     capturas: [
       { arquivo: 'sobra-painel-escuro', forma: 'desktop' },
@@ -28,6 +31,7 @@ export const PROJETOS: Projeto[] = [
     slug: 'pontual',
     cor: 'var(--pontual)',
     repo: 'https://github.com/Felixdario/Pontual',
+    aoVivo: 'https://pontual-zeta.vercel.app/b/navalha-e-cafe',
     capa: 'pontual-capa',
     capturas: [
       { arquivo: 'pontual-painel-agenda', forma: 'desktop' },
@@ -40,6 +44,7 @@ export const PROJETOS: Projeto[] = [
     slug: 'pulo',
     cor: 'var(--pulo)',
     repo: 'https://github.com/Felixdario/Pulo',
+    aoVivo: 'https://pulo-two.vercel.app',
     capa: 'pulo-capa',
     capturas: [
       { arquivo: 'pulo-dashboard', forma: 'desktop' },
@@ -52,6 +57,7 @@ export const PROJETOS: Projeto[] = [
     slug: 'confere',
     cor: 'var(--confere)',
     repo: 'https://github.com/Felixdario/Confere',
+    aoVivo: 'https://confere-six.vercel.app',
     capa: 'confere-capa',
     capturas: [
       { arquivo: 'confere-capa', forma: 'desktop' },

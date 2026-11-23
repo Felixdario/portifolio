@@ -33,6 +33,7 @@ export const en: Dicionario = {
     intro: 'Four projects from 2026. Each one makes a promise, and a test proves it holds.',
     ver: '→ view project',
     repo: '→ repository',
+    aoVivo: '→ see it live',
   },
   projetos: {
     sobra: {
@@ -49,7 +50,7 @@ export const en: Dicionario = {
         meta: '01 · personal finance · 2026',
         resumo:
           "Personal finance that answers how much you have now, where this month's money went and how much is left. The mobile app logs a purchase on the spot; the web dashboard explains the month.",
-        demo: 'runs locally, with a demo user and fictional data',
+        demo: 'live, with a demo user and fictional data',
         garantiaTitulo: 'R$ 10.00 in 3. Still adds up to 10.00.',
         demonstracao: {
           botao: 'Split in 3',
@@ -104,7 +105,7 @@ export const en: Dicionario = {
         meta: '02 · online booking · 2026',
         resumo:
           'Online booking that never lets the same slot be taken twice. Customers book on their own from their phone, and the barbershop, salon or clinic follows the schedule on a dashboard.',
-        demo: 'runs locally, with a demo account and fictional data',
+        demo: 'live, with a demo account and fictional data',
         garantiaTitulo: '20 requests for the same slot. 1 booking.',
         demonstracao: {
           botao: 'Send the 20 requests',
@@ -159,7 +160,7 @@ export const en: Dicionario = {
         meta: '03 · link shortener · 2026',
         resumo:
           'A URL shortener with analytics that counts every human click once, keeps bots and WhatsApp previews apart, and keeps redirects fast.',
-        demo: 'runs locally, with a demo account and fictional data',
+        demo: 'live, with a demo account and fictional data',
         garantiaTitulo: 'The worker dies. No click counts twice.',
         demonstracao: {
           botao: 'Kill the worker',
@@ -218,7 +219,7 @@ export const en: Dicionario = {
         meta: '04 · AI résumé checker · 2026',
         resumo:
           'Paste the job post, upload the résumé and see each requirement next to the passage that proves it, or the lack of one. The AI reads the résumé; the code gives the score.',
-        demo: 'runs locally, in a rule-based demo mode with no API key',
+        demo: 'live, in a rule-based demo mode with no AI',
         garantiaTitulo: '4 versions of a résumé. One score.*',
         demonstracao: {
           botao: 'Compare the 4 versions',
@@ -268,6 +269,7 @@ export const en: Dicionario = {
     papel: 'directing the AI agents, written decisions and tests',
     codigoRotulo: 'Code',
     demoRotulo: 'Demo',
+    demoAviso: 'Free hosting: the first visit can take up to a minute while the server wakes up.',
     licencaRotulo: 'License',
     licenca: 'MIT',
     garantiaRotulo: 'The guarantee',

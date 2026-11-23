@@ -83,3 +83,15 @@ describe('dados', () => {
     ]);
   });
 });
+
+describe('demos no ar', () => {
+  it('cada projeto tem o endereço https da demo publicada', () => {
+    for (const p of PROJETOS) expect(p.aoVivo, p.slug).toMatch(/^https:\/\/[a-z0-9-]+\.vercel\.app(\/|$)/);
+  });
+
+  it('nenhum texto diz mais que a demo só roda localmente', () => {
+    for (const d of [pt, en]) {
+      for (const slug of SLUGS) expect(d.projetos[slug].pagina.demo).not.toMatch(/localmente|locally/);
+    }
+  });
+});
