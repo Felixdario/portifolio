@@ -195,7 +195,7 @@ Modo econômico: uma fase por sessão. Para retomar, abra uma sessão nesta past
   (stream limitado a 20.000 entradas com `CLICKS_MAXLEN`).
 - Confere: sem o modelo de embeddings (só taxonomia). PDF com texto em imagem ou desenho (Canva e afins)
   é recusado com explicação (ver abaixo); não há OCR.
-- Os dados demo do Pontual ficam com as datas do último deploy.
+- Os dados demo do Pontual são refeitos uma vez por dia; agendamentos de visitantes somem nessa hora.
 
 ### Correções depois da publicação (2026-11-23)
 - **Pulo, POST em link 307/308:** preservava o método só no GET; agora o POST num link sem senha
@@ -220,8 +220,11 @@ Prévias de compartilhamento (Open Graph e Twitter, 1200×630) em `public/og/`, 
 geradas por `npm run previas` (`scripts/previas.mjs` repete os números de `src/i18n`: rodar de novo se mudarem).
 `sitemap.xml` e `robots.txt` saem de `src/app/sitemap.ts` e `src/app/robots.ts`.
 
-Melhorias que ficam: recriar a demo do Pontual a partir da data de hoje (hoje fica com as datas do
-deploy), testar em Safari/Firefox e em celular real, decidir sobre kickers e fios (gate de design).
+Melhorias que ficam: testar em Safari/Firefox e em celular real, decidir sobre kickers e fios (gate de design).
+
+Demo do Pontual com a data de hoje: com `DEMO_RENOVAR_DIARIA=true` (ligada no Render), a API refaz o
+estabelecimento demo ao subir e a cada hora quando ele foi semeado noutro dia (fuso de São Paulo).
+Commit `7e75a8b` no Pontual, 4 testes unitários e 1 de integração.
 
 Feito em 2026-11-23: currículos em PDF (PT e EN) ligados no contato do site; números conferidos rodando
 as suítes: Sobra 1091 testes (api 167, mobile 164), Pulo 538 unitários e 172 de integração (db 6,
